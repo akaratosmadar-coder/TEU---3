@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trans Europe Ultra - Regisztráció</title>
+  <!-- Modern Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      text-align: left;
+    }
+
+    /* Alapértelmezett sorkizárás a bekezdésekre */
+    p, .bento-card p:not(.highlight-box) {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    /* Reszponzív navigáció */
+    @media (max-width: 968px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+        padding: 0;
+      }
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .lang-switcher a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.2rem 0.4rem;
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+    .lang-switcher a.active, .lang-switcher a:hover {
+      background: #f59e0b;
+      color: #0f172a;
+    }
+
+    .nav-links a.highlight-green {
+      color: #4ade80 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-green:hover {
+      color: #86efac !important;
+    }
+
+    /* Pirosas kiemelés a regisztráció gombhoz */
+    .nav-links a.highlight-red {
+      color: #ef4444 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-red:hover {
+      color: #f87171 !important;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+      margin-bottom: 0.75rem;
+    }
+
+    .yellow-highlight {
+      color: #d97706;
+      font-weight: 700;
+    }
+
+    /* Űrlap stílusok */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 5px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      background-color: #f8fafc;
+      color: #0f172a;
+      box-sizing: border-box;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #f59e0b;
+      background-color: #ffffff;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+
+    .price-box {
+      background: #f1f5f9;
+      border-left: 4px solid #f59e0b;
+      padding: 1rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      border: none;
+      padding: 0.85rem 2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+    }
+    .submit-btn:hover {
+      background: linear-gradient(135deg, #d97706, #b45309);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      padding: 3.5rem 1rem;
+      margin-top: 5rem;
+      background-color: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css?v=20260930-bp200km">
+  <script src="site.js" defer></script>
+  <style id="header-typography">
+/* Fő navigáció: nagyobb betűk és színes kiemelések. */
+header .site-nav .nav-primary li,
+header .site-nav .nav-primary a,
+header .site-nav .nav-primary a:is(.active, :hover, :focus, :active) {
+  font-size: 14px !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+header .site-nav .nav-primary a {
+  padding: .45rem .4rem;
+  border-radius: 6px;
+  transition: background-color .2s, color .2s;
+}
+header .site-nav .nav-primary a:hover {
+  background: rgba(255, 255, 255, .08);
+}
+header .site-nav .nav-primary a.active {
+  background: rgba(245, 158, 11, .12);
+  color: #f59e0b;
+  box-shadow: inset 0 -2px #f59e0b;
+}
+header .site-nav .nav-primary a.highlight-green { color: #4ade80 !important; }
+header .site-nav .nav-primary a.highlight-green:hover { background: rgba(74, 222, 128, .10); color: #86efac !important; }
+header .site-nav .nav-primary a.highlight-green.active { background: rgba(74, 222, 128, .12); box-shadow: inset 0 -2px #4ade80; }
+header .site-nav .nav-primary a.highlight-red { color: #ef4444 !important; }
+header .site-nav .nav-primary a.highlight-red:hover { background: rgba(239, 68, 68, .10); color: #f87171 !important; }
+header .site-nav .nav-primary a.highlight-red.active { background: rgba(239, 68, 68, .12); box-shadow: inset 0 -2px #ef4444; }
+header .site-nav .nav-secondary li,
+header .site-nav .nav-secondary a,
+header .site-nav .nav-secondary a:is(.active, :hover, :focus, :active) {
+  font-size: 12px !important;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav" aria-label="Fő navigáció">
+      <div class="brand">
+        <a href="index.html" class="logo">TRANS EUROPE <span>ULTRA</span></a>
+        <span class="brand-motto">ORA ET LABORA</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">☰ Menü</button>
+      <div class="nav-content" id="site-menu">
+        <div class="nav-groups">
+          <ul class="nav-links nav-primary">
+            <li><a href="index.html">FŐOLDAL</a></li>
+            <li><a href="tortenelem.html">TÖRTÉNELEM</a></li>
+            <li><a href="foverseny.html" class="highlight-green">FŐVERSENY</a></li>
+            <li><a href="bikepacking-200.html" class="highlight-green">BP-200KM</a></li>
+            <li><a href="szakaszok.html">SZAKASZOK</a></li>
+            <li><a href="regisztracio.html" class="highlight-red active" aria-current="page">REGISZTRÁCIÓ</a></li>
+            <li><a href="szabalyzat.html">SZABÁLYZAT</a></li>
+          </ul>
+          <ul class="nav-links nav-secondary">
+            <li><a href="eredmenyek.html">EREDMÉNYEK</a></li>
+            <li><a href="rolunk.html">RÓLUNK</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">KONTAKT</a></li>
+          </ul>
+        </div>
+        <div class="lang-switcher" aria-label="Nyelvválasztó">
+          <a href="#" class="active" title="Magyar" lang="hu">🇭🇺 HU</a>
+          <a href="#" title="English" lang="en">🇬🇧 EN</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BENTO CONTAINER -->
+  <div class="bento-container">
+
+    <!-- HERO / FŐ CÍM -->
+    <div class="bento-card col-span-2 hero-card" style="text-align: center; padding: 2.5rem 2rem;">
+      <span class="hero-badge">Jelentkezés</span>
+      <h1 style="font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin: 0.5rem 0; color: #0f172a;">HIVATALOS <span class="yellow-highlight">REGISZTRÁCIÓ</span></h1>
+      <p style="font-size: 1.05rem; color: #334155; max-width: 750px; margin: 0 auto; text-align: center; line-height: 1.6;">
+        Biztosítsd a helyed a 2027–2030-as európai ultra-kerékpáros megmérettetésre!
+      </p>
+    </div>
+
+    <!-- INFORMÁCIÓS DOBOZ A DÍJAKRÓL -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">ℹ️ Nevezési Díjak & Információk</h2>
+      <ul style="padding-left: 1.2rem; line-height: 1.7; color: #334155;">
+        <li><strong>Trans Europe Ultra (Főverseny - 5 760 km):</strong> <span class="yellow-highlight">650 €</span> (Teljes körű csomag, nyomkövetés, érem, 1+3 éves ciklus).</li>
+        <li><strong>BP-200KM (Mellékverseny / 4 évre szóló regisztráció):</strong> <span class="yellow-highlight">65 €</span> (Érvényes a teljes 4 éves időszakra, digitális útlevéllel és szakasz-ellenőrzéssel).</li>
+        <li><strong>Early Bird Kedvezmény:</strong> A főversenyre vonatkozóan <strong>március 31-ig</strong> kedvezményes <span class="yellow-highlight">499 €</span>-s áron lehet nevezni!</li>
+      </ul>
+    </div>
+
+    <!-- REGISZTRÁCIÓS ŰRLAP -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">📝 Versenyzői Jelentkezési Lap</h2>
+      
+      <form action="#" method="POST">
+        
+        <div class="form-group">
+          <label for="fullname">Teljes Név *</label>
+          <input type="text" id="fullname" name="fullname" required placeholder="pl. Balla István">
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail Cím *</label>
+          <input type="email" id="email" name="email" required placeholder="pelda@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="country">Ország (ahonnan nevez) *</label>
+          <input type="text" id="country" name="country" required placeholder="pl. Magyarország">
+        </div>
+
+        <div class="form-group">
+          <label for="category">Mire nevez? *</label>
+          <select id="category" name="category" required>
+            <option value="" disabled selected>Kérjük, válasszon versenyszámot...</option>
+            <option value="foverseny_normal">Trans Europe Ultra (Főverseny) – 650 €</option>
+            <option value="foverseny_earlybird">Trans Europe Ultra (Early Bird - március 31-ig) – 499 €</option>
+            <option value="bikepacking200">BP-200KM (4 évre szóló regisztráció) – 65 €</option>
+          </select>
+        </div>
+
+        <div class="price-box">
+          <strong>Fizetendő összeg / Kiválasztott kategória:</strong> A kiválasztott opció alapján a rendszer a megadott e-mail címre küldi a biztonságos banki fizetési linket a regisztráció véglegesítéséhez.
+        </div>
+
+        <div class="form-group">
+          <label for="message">Megjegyzés / Vészhelyzeti információ (opcionális)</label>
+          <textarea id="message" name="message" rows="4" placeholder="Esetleges egészségügyi információk, kerékpár típusa vagy egyéb megjegyzés..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Jelentkezés elküldése</button>
+      </form>
+    </div>
+
+  </div>
+  <!-- BENTO CONTAINER VÉGE -->
+
+  <footer>
+    <p>&copy; 2027–2030 Trans Europe Ultra. Minden jog fenntartva.</p>
+  </footer>
+</body>
+</html>

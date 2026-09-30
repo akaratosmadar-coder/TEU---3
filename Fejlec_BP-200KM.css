@@ -1,0 +1,35 @@
+/* Fő navigáció: nagyobb betűk és színes kiemelések. */
+header .site-nav .nav-primary li,
+header .site-nav .nav-primary a,
+header .site-nav .nav-primary a:is(.active, :hover, :focus, :active) {
+  font-size: 14px !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+header .site-nav .nav-primary a {
+  padding: .45rem .4rem;
+  border-radius: 6px;
+  transition: background-color .2s, color .2s;
+}
+header .site-nav .nav-primary a:hover {
+  background: rgba(255, 255, 255, .08);
+}
+header .site-nav .nav-primary a.active {
+  background: rgba(245, 158, 11, .12);
+  color: #f59e0b;
+  box-shadow: inset 0 -2px #f59e0b;
+}
+header .site-nav .nav-primary a.highlight-green { color: #4ade80 !important; }
+header .site-nav .nav-primary a.highlight-green:hover { background: rgba(74, 222, 128, .10); color: #86efac !important; }
+header .site-nav .nav-primary a.highlight-green.active { background: rgba(74, 222, 128, .12); box-shadow: inset 0 -2px #4ade80; }
+header .site-nav .nav-primary a.highlight-red { color: #ef4444 !important; }
+header .site-nav .nav-primary a.highlight-red:hover { background: rgba(239, 68, 68, .10); color: #f87171 !important; }
+header .site-nav .nav-primary a.highlight-red.active { background: rgba(239, 68, 68, .12); box-shadow: inset 0 -2px #ef4444; }
+header .site-nav .nav-secondary li,
+header .site-nav .nav-secondary a,
+header .site-nav .nav-secondary a:is(.active, :hover, :focus, :active) {
+  font-size: 12px !important;
+  line-height: 1.4;
+  letter-spacing: normal;
+}

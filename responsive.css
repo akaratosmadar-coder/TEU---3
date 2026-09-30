@@ -1,0 +1,110 @@
+/* Egységes tipográfia és reszponzív felülírások az oldalspecifikus CSS után. */
+body { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6; color: #334155; }
+h1 { font-size: 2.5rem !important; font-weight: 800; letter-spacing: -.5px; }
+h2, .card h2 { font-size: 1.75rem !important; font-weight: 700; margin-top: 0; margin-bottom: 1rem; }
+p, .bento-container li, .container li, .panel p { font-size: 1rem !important; }
+h3 { font-size: 1.25rem !important; }
+.hero-card { background: linear-gradient(145deg, #fff, #f8fafc); border: 1px solid rgba(245,158,11,.2); padding: 2.5rem 2rem; border-radius: 16px; text-align: center; }
+.hero-card p { font-size: 1rem !important; }
+.card { padding: 2rem; }
+footer { padding: 3.5rem 1rem; margin-top: 5rem; background: #0f172a; color: #94a3b8; text-align: center; }
+footer p { text-align: center !important; }
+.site-nav { flex-direction: row; }
+.panel.is-open { display: block; }
+.table-scroll table { min-width: 640px; }
+@media (max-width: 1200px) {
+ .site-nav { align-items: center; }
+ .menu-toggle { display: inline-flex; align-items: center; }
+ .nav-content { flex-basis: 100%; flex-direction: column; align-items: stretch; }
+ .site-nav .nav-links { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .25rem .75rem; justify-content: start; }
+ .site-nav .nav-links a { width: 100%; }
+ .lang-switcher { align-self: flex-start; }
+ .js .nav-content { display: none; }
+ .js .nav-content.is-open { display: flex; }
+ .bento-container { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 700px) {
+ .site-nav { padding: 1rem; gap: .75rem; }
+ .logo { font-size: 1.1rem; }
+ .bento-container, .container { padding: 0 1rem !important; margin: 1.25rem auto !important; }
+ .bento-container, .bento-container:has(> .col-span-2):not(:has(> .bento-card:not(.col-span-2))) { grid-template-columns: minmax(0,1fr); gap: 1rem; }
+ .col-span-2 { grid-column: auto; }
+ .bento-card:not(.bento-image-card), .card, .hero-card { padding: 1.5rem 1.25rem !important; }
+ h1 { font-size: 1.85rem !important; }
+ h2, .card h2 { font-size: 1.4rem !important; }
+ h3 { font-size: 1.15rem !important; }
+ p, li, .card p, .bento-card p:not(.highlight-box), .panel p { text-align: left !important; }
+ .highlight-box { text-align: center !important; padding: 1rem; }
+ .contact-grid, .form-grid { grid-template-columns: minmax(0,1fr) !important; }
+ .pricing-flex-container { flex-direction: column; }
+ .pricing-column, .gpx-feature-item { min-width: 0; }
+ .gpx-features { flex-wrap: wrap; }
+ .hero-badge { max-width: 100%; font-size: .8rem; }
+ footer { margin-top: 3rem; padding: 2.5rem 1rem; }
+ footer p { text-align: center !important; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+
+/* Két rendezett menüsor: az alsó sor a FŐOLDAL bal széléhez igazodik. */
+.nav-groups { min-width: 0; display: flex; flex-direction: column; gap: .15rem; }
+.site-nav .nav-links { justify-content: flex-start; }
+.site-nav .nav-primary a { font-size: .8rem; }
+.site-nav .nav-secondary a { font-size: .75rem; }
+.site-nav .nav-secondary li { font-size: .75rem !important; }
+.team-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.team-card h2 { margin: 1rem 0 .5rem; }
+.team-avatar { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: #fffbeb; border: 1px solid #fcd34d; color: #b45309; border-radius: 50%; font-size: 1.3rem; font-weight: 800; }
+.team-role { color: #b45309; font-weight: 700; text-align: left; }
+.team-note { color: #64748b; margin-top: 1rem; }
+@media (min-width: 1201px) {
+ .site-nav { flex-wrap: nowrap; }
+ .nav-content { flex: 1 1 0; min-width: 0; align-items: center; }
+ .site-nav .nav-primary { flex-wrap: nowrap; }
+ .site-nav .nav-primary a { white-space: nowrap; }
+}
+@media (max-width: 1200px) {
+ .nav-groups { gap: .75rem; }
+ .site-nav .nav-secondary { justify-content: start; }
+ .site-nav .nav-primary a { font-size: .9rem; }
+ .site-nav .nav-secondary a { font-size: .8rem; }
+}
+@media (max-width: 700px) {
+ .team-grid { grid-template-columns: minmax(0,1fr); gap: 1rem; }
+ .team-note { text-align: left; }
+}
+
+/* Fő navigáció: nagyobb betűk és színes kiemelések. */
+header .site-nav .nav-primary li,
+header .site-nav .nav-primary a,
+header .site-nav .nav-primary a:is(.active, :hover, :focus, :active) {
+  font-size: 14px !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+header .site-nav .nav-primary a {
+  padding: .45rem .4rem;
+  border-radius: 6px;
+  transition: background-color .2s, color .2s;
+}
+header .site-nav .nav-primary a:hover {
+  background: rgba(255, 255, 255, .08);
+}
+header .site-nav .nav-primary a.active {
+  background: rgba(245, 158, 11, .12);
+  color: #f59e0b;
+  box-shadow: inset 0 -2px #f59e0b;
+}
+header .site-nav .nav-primary a.highlight-green { color: #4ade80 !important; }
+header .site-nav .nav-primary a.highlight-green:hover { background: rgba(74, 222, 128, .10); color: #86efac !important; }
+header .site-nav .nav-primary a.highlight-green.active { background: rgba(74, 222, 128, .12); box-shadow: inset 0 -2px #4ade80; }
+header .site-nav .nav-primary a.highlight-red { color: #ef4444 !important; }
+header .site-nav .nav-primary a.highlight-red:hover { background: rgba(239, 68, 68, .10); color: #f87171 !important; }
+header .site-nav .nav-primary a.highlight-red.active { background: rgba(239, 68, 68, .12); box-shadow: inset 0 -2px #ef4444; }
+header .site-nav .nav-secondary li,
+header .site-nav .nav-secondary a,
+header .site-nav .nav-secondary a:is(.active, :hover, :focus, :active) {
+  font-size: 12px !important;
+  line-height: 1.4;
+  letter-spacing: normal;
+}

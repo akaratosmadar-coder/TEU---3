@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trans Europe Ultra - Szakaszok és Hágók</title>
+  <!-- Modern Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=9Jw3PNB9pAst1ODXhOK1xc1-nKBEanoSVl0Ap1xHXhu5Mj1K5vg-LkRUQGHvdzvScwy4zRQMubxrzvLOHMJFhKBTKSNHuSRB30clkgfwoVUZQ0rCT_3AfK8xmNYoZ-H5tc9xbgLEKw47LgjH6ljT3EL5AhBaQG9WeI__7QkZ_PkTGOtPZGknoFWUwu1HZ9EXA8RuJ-brHMlbpuBPJtE1n7piRNPMettRQOVLU9MHNG0W7-O9FT6_to88LW_BCrdfj_FA3a-jYUd7e7bh-SZKJiXNDmCpgx0QjtWiU6kUd4PtQIlnNw9QUX3QPBISoOMj" charset="UTF-8"></script><style>
+    body {
+      font-family: 'Inter', sans-serif;
+      text-align: left;
+    }
+
+    /* Alapértelmezett sorkizárás a bekezdésekre */
+    p, .bento-card p:not(.highlight-box) {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    /* Az összes szakasz/hágó alcím (h3) sárga színe */
+    .bento-card h3 {
+      color: #d97706 !important;
+    }
+
+    /* Országzászló stílus a címekben */
+    .flag-icon {
+      height: 1.1em;
+      vertical-align: -0.15em;
+      margin-right: 0.4rem;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+
+    @media (max-width: 968px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+        padding: 0;
+      }
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .lang-switcher a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.2rem 0.4rem;
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+    .lang-switcher a.active, .lang-switcher a:hover {
+      background: #f59e0b;
+      color: #0f172a;
+    }
+
+    .nav-links a.highlight-green {
+      color: #4ade80 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-green:hover {
+      color: #86efac !important;
+    }
+
+    /* Pirosas kiemelés a regisztráció gombhoz */
+    .nav-links a.highlight-red {
+      color: #ef4444 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-red:hover {
+      color: #f87171 !important;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Ételajánló kis oldaldoboz stílusa */
+    .food-box {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 0.9rem 1.1rem;
+      margin: 1.2rem 0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: #78350f;
+      box-shadow: 0 2px 6px rgba(245, 158, 11, 0.08);
+    }
+    .food-box strong {
+      color: #92400e;
+    }
+
+    /* Megnövelt, szellősebb lábléc */
+    footer {
+      padding: 3.5rem 1rem;
+      margin-top: 5rem;
+      background-color: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .gpx-download-action { display: flex; justify-content: flex-end; margin-top: 1rem; }
+    .gpx-download-button {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: .65rem 1rem; margin: 0; border: 1px solid #d97706;
+      border-radius: 10px; background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      color: #0f172a; font: inherit; font-size: .9rem; font-weight: 700;
+      opacity: 1; max-width: 100%; white-space: normal;
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css?v=20260930-bp200km">
+  <script src="site.js" defer></script>
+  <style id="header-typography">
+/* Fő navigáció: nagyobb betűk és színes kiemelések. */
+header .site-nav .nav-primary li,
+header .site-nav .nav-primary a,
+header .site-nav .nav-primary a:is(.active, :hover, :focus, :active) {
+  font-size: 14px !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+header .site-nav .nav-primary a {
+  padding: .45rem .4rem;
+  border-radius: 6px;
+  transition: background-color .2s, color .2s;
+}
+header .site-nav .nav-primary a:hover {
+  background: rgba(255, 255, 255, .08);
+}
+header .site-nav .nav-primary a.active {
+  background: rgba(245, 158, 11, .12);
+  color: #f59e0b;
+  box-shadow: inset 0 -2px #f59e0b;
+}
+header .site-nav .nav-primary a.highlight-green { color: #4ade80 !important; }
+header .site-nav .nav-primary a.highlight-green:hover { background: rgba(74, 222, 128, .10); color: #86efac !important; }
+header .site-nav .nav-primary a.highlight-green.active { background: rgba(74, 222, 128, .12); box-shadow: inset 0 -2px #4ade80; }
+header .site-nav .nav-primary a.highlight-red { color: #ef4444 !important; }
+header .site-nav .nav-primary a.highlight-red:hover { background: rgba(239, 68, 68, .10); color: #f87171 !important; }
+header .site-nav .nav-primary a.highlight-red.active { background: rgba(239, 68, 68, .12); box-shadow: inset 0 -2px #ef4444; }
+header .site-nav .nav-secondary li,
+header .site-nav .nav-secondary a,
+header .site-nav .nav-secondary a:is(.active, :hover, :focus, :active) {
+  font-size: 12px !important;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav" aria-label="Fő navigáció">
+      <div class="brand">
+        <a href="index.html" class="logo">TRANS EUROPE <span>ULTRA</span></a>
+        <span class="brand-motto">ORA ET LABORA</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">☰ Menü</button>
+      <div class="nav-content" id="site-menu">
+        <div class="nav-groups">
+          <ul class="nav-links nav-primary">
+            <li><a href="index.html">FŐOLDAL</a></li>
+            <li><a href="tortenelem.html">TÖRTÉNELEM</a></li>
+            <li><a href="foverseny.html" class="highlight-green">FŐVERSENY</a></li>
+            <li><a href="bikepacking-200.html" class="highlight-green">BP-200KM</a></li>
+            <li><a href="szakaszok.html" class="active" aria-current="page">SZAKASZOK</a></li>
+            <li><a href="regisztracio.html" class="highlight-red">REGISZTRÁCIÓ</a></li>
+            <li><a href="szabalyzat.html">SZABÁLYZAT</a></li>
+          </ul>
+          <ul class="nav-links nav-secondary">
+            <li><a href="eredmenyek.html">EREDMÉNYEK</a></li>
+            <li><a href="rolunk.html">RÓLUNK</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">KONTAKT</a></li>
+          </ul>
+        </div>
+        <div class="lang-switcher" aria-label="Nyelvválasztó">
+          <a href="#" class="active" title="Magyar" lang="hu">🇭🇺 HU</a>
+          <a href="#" title="English" lang="en">🇬🇧 EN</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BENTO GRID KEZDETE -->
+  <div class="bento-container">
+
+    <!-- HERO / FŐ CÍM -->
+    <div class="bento-card col-span-2 hero-card" style="text-align: center; padding: 2.5rem 2rem;">
+      <span class="hero-badge">12 ORSZÁG | HIVATALOS ÚTVONAL ÉS HÁGÓK</span>
+      <h1 style="font-size: 2.5rem; font-weight: 800; letter-spacing: -0.5px; margin: 0.5rem 0; color: #0f172a;">A VERSENY SZAKASZAI</h1>
+      <p style="font-size: 1.05rem; color: #334155; max-width: 750px; margin: 0 auto; text-align: justify; line-height: 1.6;">
+        A Trans Europe Ultra hivatalos ellenőrzőpontjai, hágói és szakaszai, részletes leírásokkal.
+      </p>
+    </div>
+
+    <!-- START & WP1 | PORTUGÁLIA -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/pt.png" alt="Portugália zászló" class="flag-icon"> START & WP1 | PORTUGÁLIA</h2>
+      
+      <h3>START | Porto Lighthouse (Farol de Felgueiras – 0 m)</h3>
+      <p><strong>A hágó / szakasz részletes leírása:</strong> A rajt az Atlanti-óceán partján, a Douro folyó torkolatánál álló 19. századi gránit világítótoronynál található. A tengerparti szakasz lapos, de a nyílt óceán felől érkező erős pofa- vagy oldalszél azonnal komoly fizikai terhelést jelenthet. A versenyzők a történelmi Porto belvárosának macskaköves emelkedőin kanyarodnak ki a Douro-völgy felé.</p>
+      
+      <p><strong>Bencés háttér:</strong> Mosteiro de São Bento da Vitória – Porto belvárosában álló monumentális bencés kolostor, a rajtcsomag-átvétel és műszaki gépátvétel helyszíne.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Francesinha vagy Bacalhau à Gomes de Sá (Porto sűrű, sörös-paradicsomos mártásos melegszendvics-költeménye vagy a klasszikus portói tőkehalfilé sütve, főtt burgonyával és olajbogyóval).
+      </div>
+
+      <h3>WP1 | Ílhavo – Navio-Museu Santo André (0 m)</h3>
+      <p><strong>A hágó / szakasz részletes leírása:</strong> A Ria de Aveiro lagúnarendszere mentén futó, teljesen sík, de erősen kitett tengerparti aszfaltút. A szakasz fő kihívása a páratartalom és a szüntelen atlanti szél. A navigációs pont közvetlenül a Santo André múzeumhajó horgonyzóhelyénél található.</p>
+      
+      <p><strong>A helyszín szimbolikája:</strong> Ílhavo a portugál tőkehalhalászat szentélye; a múzeumhajó az újfundlandi tengerészek és a Terra de Bacalhaos (Újfundland) felé induló halászok emlékét őrzi.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Bacalhau à Brás vagy Pastéis de Bacalhau (Tépázott sós tőkehal hajszálvékonyra vágott sült krumplival és tojással összeforgatva, vagy a zsebre tehető ropogós tőkehalfánkocskák).
+      </div>
+    </div>
+
+    <!-- CP1 | PORTUGÁLIA -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/pt.png" alt="Portugália zászló" class="flag-icon"> CP1 | PORTUGÁLIA</h2>
+      
+      <h3>Torre – Serra da Estrela (1.993 m)</h3>
+      <p><strong>A hágó / emelkedő részletes leírása:</strong> Portugália szárazföldi részének legmagasabb pontja. Covilhã vagy Seia felől indulva a mászás több mint 30 kilométer hosszú, amely során a kerékpárosok közel 1.500 méter szintkülönbséget küzdenek le (átlagosan 5–6%-os, de néhol 10–12%-os meredekségű szektorokkal). Az alsó szakasz tölgyerdői a fahatár felett kopár, óriási gránittömbökkel teli tájjá változnak. A csúcson az 1950-es években épült ikonikus hűtőtorony-kupolák és a 7 méteres kőoszlop fogadja a versenyzőket, amellyel az építmény pontosan eléri a 2.000 méteres tengerszint feletti magasságot.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Queijo Serra da Estrela (Védett eredetű, folyósan krémes hegyi juhsajt, amelyet hagyományosan melegen, ropogós héjú kenyérbe tálalnak).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="3" aria-label="BP-200 GPX letöltése: Torre – Serra da Estrela (1.993 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+    </div>
+
+    <!-- CP2 | SPANYOLORSZÁG -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/es.png" alt="Spanyolország zászló" class="flag-icon"> CP2 | SPANYOLORSZÁG</h2>
+      
+      <h3>Pico de Veleta – Sierra Nevada (3.300 m)</h3>
+      <p><strong>A hágó / emelkedő részletes leírása:</strong> Európa legmagasabb kerékpárral elérhető pontja. Granadából (~700 m) indulva a folyamatos emelkedő hossza 43 kilométer, a szintemelkedés pedig brutális: több mint 2.600 méter egyetlen mászással! Az út első 30 kilométere tökéletes minőségű aszfalt (átlagosan 6–8%-os meredekséggel), de Hoya de la Mora (2.500 m) felett a lezárt hegyi út minősége drasztikusan romlik: a kopott aszfaltot felváltja a fagykáros, zúzottköves és sziklás magashegyi terep. A 3.000 méter feletti zónában az oxigénhiány, a perzselő andalúz napsütés vagy a hirtelen lecsapó jeges szél jelenti a teljes verseny egyik legkeményebb fizikai megpróbáltatását.</p>
+      
+      <p><strong>Bencés háttér:</strong> Santa Maria de Montserrat – Katalónia szent hegyén álló bencés apátság, amelyet a mezőny a Pireneusok felé haladva érint.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Salmorejo Cordobés & Jamón Ibérico (Sűrű, hideg andalúz paradicsomkrémleves érlelt spanyol sonkával és főtt tojással).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="4" aria-label="BP-200 GPX letöltése: Pico de Veleta – Sierra Nevada (3.300 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+    </div>
+
+    <!-- CP3 | ANDORRA -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/ad.png" alt="Andorra zászló" class="flag-icon"> CP3 | ANDORRA</h2>
+      
+      <h3>Port d'Envalira (2.408 m)</h3>
+      <p><strong>A hágó / emelkedő részletes leírása:</strong> A Pireneusok legmagasabb burkolt hágója. Andorra la Vella felől az emelkedő 35 kilométer hosszú, szintemelkedése 1.300 méter (átlagosan 5–6%-os, nagyon egyenletes lejtésű szerpentin). Bár az útburkolat kiváló minőségű, a nagy magasság, a sűrű nemzetközi tranzitforgalom, valamint a Pireneusok kiszámíthatatlan, villámgyorsan kialakuló jégesői és zivatarai komoly figyelmet igényelnek.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Trinxat de la Cerdanya (Burgonyából, savanyított káposztából és húsos szalonnából álló, serpenyőben ropogósra pirított pireneusi hegyi egytálétel).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="5" aria-label="BP-200 GPX letöltése: Port d&#x27;Envalira (2.408 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+    </div>
+
+    <!-- CP4 | FRANCIAORSZÁG -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/fr.png" alt="Franciaország zászló" class="flag-icon"> CP4 | FRANCIAORSZÁG</h2>
+      
+      <h3>Cime de la Bonette (2.802 m)</h3>
+      <p><strong>A hágó / emelkedő részletes leírása:</strong> A francia Tengeri-Alpok koronája. Jauziers felől a hágóra vezető emelkedő 24 kilométer hosszú, 1.580 méter szintemelkedéssel és 6,6%-os átlagos meredekséggel. A Col de la Bonette hágó (2.715 m) tetejéről egy extra aszfaltozott csúcshurok kanyarodik fel pontosan 2.802 méteres magasságig. A fahatár feletti táj holdbéli, sötét palatörmelékes sziklahasadékokkal teli, ahol a ritka levegő és a fagypont közeli hőmérséklet még nyár közepén is mindennapos.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Socca & Daube Provençale (Csicseriborsó-lisztből sült sós lepény, valamint vörösboros, lassú tűzön főzött provanszi marharagu).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="6" aria-label="BP-200 GPX letöltése: Cime de la Bonette (2.802 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+    </div>
+
+    <!-- CP5 | SVÁJC -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/ch.png" alt="Svájc zászló" class="flag-icon"> CP5 | SVÁJC</h2>
+      
+      <h3>Umbrail-hágó (2.501 m)</h3>
+      <p><strong>A hágó / emelkedő részletes leírása:</strong> Svájc legmagasabb aszfaltozott hágója (Passo dell'Umbrail). Santa Maria Val Müstair felől az emelkedő 13,2 kilométer hosszú, ami alatt 1.114 méter szintet küzd le a kerékpáros (folyamatosan meredek, 8,4%-os átlaggal). Szűk, hajtűkanyarokkal teli alpesi szerpentin, amely erdős sávból indulva éri el a magashegyi legelőket, közvetlenül az olasz határnál.</p>
+      
+      <p><strong>Bencés háttér:</strong> Kloster Sankt Johann (Müstair) – A hágó svájci lábánál, a Val Müstair völgyben álló, Nagy Károly korában (8. század) alapított UNESCO Világörökségi bencés kolostor.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Schweizer Rösti mit Spiegelei (Serpenyőben aranysárgára pirított reszelt burgonya, bőséges olvasztott alpesi sajttal és tükörtojással).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="7" aria-label="BP-200 GPX letöltése: Umbrail-hágó (2.501 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+    </div>
+
+    <!-- CP6 | OLASZORSZÁG -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/it.png" alt="Olaszország zászló" class="flag-icon"> CP6 | OLASZORSZÁG</h2>
+      
+      <h3>Passo dello Stelvio (2.757 m)</h3>
+      <p><strong>A hágó / emelkedő részletes leírása:</strong> A kerékpársport egyik leghíresebb szentélye. Prato allo Stelvio felől 24,3 kilométer hosszú, 1.808 méter szintemelkedést tartalmaz (átlagosan 7,4%-os dőlésszöggel). A hegy védjegye a 48 számozott, kőfalakkal megtámasztott hajtűkanyar. A folyamatos meredekség, a szűk alagutak, az időnként júniusban is jelen lévő hófalak és az extrém alpesi időjárás óriási mentális és fizikai fegyelmet követel meg.</p>
+      
+      <p><strong>Bencés háttér:</strong> Abtei Marienberg (Mals) – Európa legmagasabban fekvő bencés apátsága (1.340 m), amely a Stelvio olasz oldali völgyében vigyázza a hágón átkelőket.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Pizzoccheri della Valtellina (Hajdinalisztes kézműves tészta, alpesi sajttal, burgonyával, kelkáposztával és fokhagymás vajjal összeforgatva).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="8" aria-label="BP-200 GPX letöltése: Passo dello Stelvio (2.757 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+    </div>
+
+    <!-- CP7 | AUSZTRIA -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/at.png" alt="Ausztria zászló" class="flag-icon"> CP7 | AUSZTRIA</h2>
+      
+      <h3>Ötztaler Gletscherstraße (2.830 m)</h3>
+      <p><strong>A hágó / emelkedő részletes leírása:</strong> Ausztria és az Alpok egyik legkönyörtelenebb aszfaltozott emelkedője. Söldenből indulva az út hossza 13 kilométer, de ez alatt 1.400 méter szintkülönbséget kell leküzdeni! Az átlagos meredekség 10,5%, a legkeményebb szektorokban pedig eléri a 14–16%-ot. Az emelkedő tetején a kerékpárosok egy sötét, hideg, 1,5 kilométer hosszú hegyi alagúton (Rosi-Mittermaier-Tunnel) tekernek át, hogy megérkezzenek a Tiefenbach-gleccserhez (2.829 m).</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Tiroler Gröstl (Serpenyős tiroli specialitás: sült burgonya, fűszeres marha- és sertéshús-darabok, húsos szalonna és tükörtojás).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="9" aria-label="BP-200 GPX letöltése: Ötztaler Gletscherstraße (2.830 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+    </div>
+
+    <!-- CP8 | NÉMETORSZÁG -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/de.png" alt="Németország zászló" class="flag-icon"> CP8 | NÉMETORSZÁG</h2>
+      
+      <h3>Roßfeld Panoramastraße (1.540 m)</h3>
+      <p><strong>A hágó / emelkedő részletes leírása:</strong> Németország legmagasabb panorámaútja a bajor Alpokban, Berchtesgaden szomszédságában. Oberau felől az emelkedő 15,4 kilométer, helyenként 12–14%-os meredek rámpákkal. A hegygerincen kanyargó körút 360 fokos panorámát nyújt a Hoher Göll sziklatömbjére és a Salzach-völgyre.</p>
+      
+      <p><strong>Bencés háttér:</strong> Stift Sankt Peter (Salzburg) – A német nyelvterület legrégebbi, 696 óta megszakítás nélkül működő bencés főapátsága a határ túloldalán.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Bayerischer Schweinebraten mit Semmelknödel (Ropogós bőrű bajor sült sertéshús sűrű sörmártással, zsemlegombóccal és párolt káposztával).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="10" aria-label="BP-200 GPX letöltése: Roßfeld Panoramastraße (1.540 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+    </div>
+
+    <!-- CP9 | CSEHORSZÁG -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/cz.png" alt="Csehország zászló" class="flag-icon"> CP9 | CSEHORSZÁG</h2>
+      
+      <h3>Praděd (1.491 m)</h3>
+      <p><strong>A hágó / emelkedő részletes leírása:</strong> Csehország legmagasabb kerékpárral elérhető csúcsa a Jeseníky-hegységben. Karlova Studánka felől egy 9 kilométeres, a közforgalom elől elzárt, jó minőségű aszfaltozott védett hegyi út vezet fel (átlagosan 7–8%-os meredekséggel). A csúcson magasodó 162 méteres televíziótoronyig vezető szakasz híres a hűvös, ködös és szeles mikroklímájáról.</p>
+      
+      <p><strong>Bencés háttér:</strong> Benediktinský klášter Rajhrad – Morvaország legrégebbi, 1048-ban alapított bencés kolostora a hegyvidék felé vezető történelmi útvonalon.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Svíčková na smetaně (Tűzdelt marhasült zöldséges-tejszínes vadas mártással, áfonyával és párolt cseh zsemlegombóccal).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="11" aria-label="BP-200 GPX letöltése: Praděd (1.491 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+    </div>
+
+    <!-- CP10 | LENGYELORSZÁG -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/pl.png" alt="Lengyelország zászló" class="flag-icon"> CP10 | LENGYELORSZÁG</h2>
+      
+      <h3>Przełęcz Karkonoska (1.198 m)</h3>
+      <p><strong>A hágó / emelkedő részletes leírása:</strong> Európa egyik legnehezebb, legmeredekebb aszfaltozott hegyi hágója a Lengyel-Krkonoše (Óriás-hegység) szívében. Podgórzyn felől az emelkedő 8 kilométer hosszú, de az utolsó 4 kilométer átlagos meredeksége meghaladja a 14–15%-ot, míg a legkeményebb töréseknél az út eléri a brutális 27–30%-os meredekséget! A szűk, erdei aszfaltcsíkon az alacsony sebesség miatti egyensúlyozás és az első kerék talajon tartása jelenti a fő kihívást.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Pierogi Ruskie (Túrós-burgonyás töltelékű lengyel derelye, pirított hagymával és tejföllel tálalva).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="12" aria-label="BP-200 GPX letöltése: Przełęcz Karkonoska (1.198 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+    </div>
+
+    <!-- CP11 | SZLOVÁKIA -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/sk.png" alt="Szlovákia zászló" class="flag-icon"> CP11 | SZLOVÁKIA</h2>
+      
+      <h3>Kráľova hoľa (1.946 m)</h3>
+      <p><strong>A hágó / emelkedő részletes leírása:</strong> Szlovákia és a Kárpátok legmagasabb aszfaltozott/betonozott kerékpáros csúcsa az Alacsony-Tátrában. Šumiac (Somogy) felől a mászás 11,5 kilométer hosszú, 1.000 métert meghaladó szintemelkedéssel (átlagosan 8,8–9%-os meredekség). Az alsó erdei szakaszt követően, a fahatár felett egy rázós, keskeny betonút kanyarog a kopár, szeles hegygerincen a csúcson álló TV-adótoronyig. Rendkívül kitett a Kárpátok viharos szélinek.</p>
+      
+      <p><strong>Bencés háttér:</strong> Kláštor Hronský Beňadik (Garamzentbenedek) – I. Géza király által 1075-ben alapított gótikus bencés apátság, valamint a ma is működő Kláštor Sampor.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Bryndzové halušky (Tradicionális szlovák juhtúrós sztrapacska pirított húsos szalonnával).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="13" aria-label="BP-200 GPX letöltése: Kráľova hoľa (1.946 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+    </div>
+
+    <!-- CP12 & FINISH | MAGYARORSZÁG -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;"><img src="https://flagcdn.com/w40/hu.png" alt="Magyarország zászló" class="flag-icon"> CP12 & FINISH | MAGYARORSZÁG</h2>
+      
+      <h3>CP12 | Kékestető (1.014 m)</h3>
+      <p><strong>A hágó / emelkedő részletes leírása:</strong> Magyarország legmagasabb pontja a Mátra gerincén. Mátrafüredtől az emelkedő 18 kilométer hosszan kanyarog fel a csúcsig. A Mátraházától induló utolsó 3,5 kilométeres szakasz (a híres „sárga sáv”) a legnehezebb, ahol a meredekség tartósan 8–10% között alakul a bükkös erdei úton a tévétoronyig.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Mátrai borzaska (Reszelt krumplis bundában sült karaj, fokhagymás tejföllel és bőséges reszelt sajttal a tetején, ropogós sült burgonyával).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="14" aria-label="BP-200 GPX letöltése: CP12 | Kékestető (1.014 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+
+      <h3>FINISH | Tihanyi Bencés Apátság (120 m)</h3>
+      <p><strong>A szakasz / célvonal részletes leírása:</strong> A Balaton-felvidék vulkanikus tanúhegyein és lankáin átvezető utolsó kilométerek után a mezőny a Tihanyi-félszigetre érkezik. A kanyargós emelkedő felvezet a Tihanyi Bencés Apátság előtti kőburkolatú térre, ahol a Balaton panorámája előtt zárul le a teljes európai utazás.</p>
+      
+      <p><strong>Bencés háttér:</strong> Tihanyi Bencés Apátság – I. András király által 1055-ben alapított apátság, a teljes európai utazás szellemi, kulturális és fizikai célvonala.</p>
+      
+      <div class="food-box">
+        <strong>Ajánlott Nemzeti Étel:</strong> Balatoni fogas filé Bakonyi módra & Tihanyi levendulás sütemény (Balatoni fogas filé erdei gombás mártással, valamint a tihanyi bencés gyógynövényes hagyományokat idéző levendulás finomság).
+      </div>
+      <div class="gpx-download-action">
+      <!-- GPX-fájl hozzáadásakor a gomb helyére letöltési link tehető. -->
+      <button class="gpx-download-button" type="button" disabled data-gpx-point="15" aria-label="BP-200 GPX letöltése: FINISH | Tihanyi Bencés Apátság (120 m)">↓ BP-200 GPX letöltése</button>
+      </div>
+    </div>
+
+  </div>
+  <!-- BENTO GRID VÉGE -->
+
+  <footer>
+    <p>&copy; 2027–2030 Trans Europe Ultra. Minden jog fenntartva.</p>
+  </footer>
+
+</body>
+</html>

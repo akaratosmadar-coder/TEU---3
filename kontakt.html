@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trans Europe Ultra - Kontakt</title>
+  <!-- Modern Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      text-align: left;
+    }
+
+    /* Alapértelmezett sorkizárás a bekezdésekre */
+    p, .card p {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    @media (max-width: 968px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+        padding: 0;
+      }
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .lang-switcher a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.2rem 0.4rem;
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+    .lang-switcher a.active, .lang-switcher a:hover {
+      background: #f59e0b;
+      color: #0f172a;
+    }
+
+    .nav-links a.highlight-green {
+      color: #4ade80 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-green:hover {
+      color: #86efac !important;
+    }
+
+    /* Pirosas kiemelés a regisztráció gombhoz */
+    .nav-links a.highlight-red {
+      color: #ef4444 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-red:hover {
+      color: #f87171 !important;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+      margin-bottom: 0.75rem;
+    }
+
+    .yellow-highlight {
+      color: #d97706;
+      font-weight: 700;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h2 {
+      color: #0f172a;
+      border-bottom: 2px solid #f59e0b;
+      padding-bottom: 0.75rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Form stílusok */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+    .form-group input, 
+    .form-group textarea, 
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: #0f172a;
+      background: #f8fafc;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, 
+    .form-group textarea:focus, 
+    .form-group select:focus {
+      outline: none;
+      border-color: #f59e0b;
+      background: #ffffff;
+    }
+    .submit-btn {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: opacity 0.2s;
+      width: 100%;
+    }
+    .submit-btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      padding: 3.5rem 1rem;
+      margin-top: 5rem;
+      background-color: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css?v=20260930-bp200km">
+  <script src="site.js" defer></script>
+  <style id="header-typography">
+/* Fő navigáció: nagyobb betűk és színes kiemelések. */
+header .site-nav .nav-primary li,
+header .site-nav .nav-primary a,
+header .site-nav .nav-primary a:is(.active, :hover, :focus, :active) {
+  font-size: 14px !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+header .site-nav .nav-primary a {
+  padding: .45rem .4rem;
+  border-radius: 6px;
+  transition: background-color .2s, color .2s;
+}
+header .site-nav .nav-primary a:hover {
+  background: rgba(255, 255, 255, .08);
+}
+header .site-nav .nav-primary a.active {
+  background: rgba(245, 158, 11, .12);
+  color: #f59e0b;
+  box-shadow: inset 0 -2px #f59e0b;
+}
+header .site-nav .nav-primary a.highlight-green { color: #4ade80 !important; }
+header .site-nav .nav-primary a.highlight-green:hover { background: rgba(74, 222, 128, .10); color: #86efac !important; }
+header .site-nav .nav-primary a.highlight-green.active { background: rgba(74, 222, 128, .12); box-shadow: inset 0 -2px #4ade80; }
+header .site-nav .nav-primary a.highlight-red { color: #ef4444 !important; }
+header .site-nav .nav-primary a.highlight-red:hover { background: rgba(239, 68, 68, .10); color: #f87171 !important; }
+header .site-nav .nav-primary a.highlight-red.active { background: rgba(239, 68, 68, .12); box-shadow: inset 0 -2px #ef4444; }
+header .site-nav .nav-secondary li,
+header .site-nav .nav-secondary a,
+header .site-nav .nav-secondary a:is(.active, :hover, :focus, :active) {
+  font-size: 12px !important;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav" aria-label="Fő navigáció">
+      <div class="brand">
+        <a href="index.html" class="logo">TRANS EUROPE <span>ULTRA</span></a>
+        <span class="brand-motto">ORA ET LABORA</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">☰ Menü</button>
+      <div class="nav-content" id="site-menu">
+        <div class="nav-groups">
+          <ul class="nav-links nav-primary">
+            <li><a href="index.html">FŐOLDAL</a></li>
+            <li><a href="tortenelem.html">TÖRTÉNELEM</a></li>
+            <li><a href="foverseny.html" class="highlight-green">FŐVERSENY</a></li>
+            <li><a href="bikepacking-200.html" class="highlight-green">BP-200KM</a></li>
+            <li><a href="szakaszok.html">SZAKASZOK</a></li>
+            <li><a href="regisztracio.html" class="highlight-red">REGISZTRÁCIÓ</a></li>
+            <li><a href="szabalyzat.html">SZABÁLYZAT</a></li>
+          </ul>
+          <ul class="nav-links nav-secondary">
+            <li><a href="eredmenyek.html">EREDMÉNYEK</a></li>
+            <li><a href="rolunk.html">RÓLUNK</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html" class="active" aria-current="page">KONTAKT</a></li>
+          </ul>
+        </div>
+        <div class="lang-switcher" aria-label="Nyelvválasztó">
+          <a href="#" class="active" title="Magyar" lang="hu">🇭🇺 HU</a>
+          <a href="#" title="English" lang="en">🇬🇧 EN</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- HERO SZEKCIÓ -->
+    <section class="hero-card">
+      <span class="hero-badge">LÉPJ KAPCSOLATBA VELÜNK</span>
+      <h1 style="font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin: 0.5rem 0; color: #0f172a;">KAPCSOLAT / <span class="yellow-highlight">ELÉRHETŐSÉGEK</span></h1>
+      <p style="font-size: 1.05rem; color: #334155; max-width: 750px; margin: 0 auto; line-height: 1.6;">
+        Kérdésed van a regisztrációval, a szabályzattal vagy a BP-200KM szakaszokkal kapcsolatban? Írj nekünk üzenetet az alábbi űrlapon keresztül!
+      </p>
+    </section>
+
+    <!-- KÉTOSZLOPOS ELRENDEZÉS (Grid) -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;" class="contact-grid">
+      
+      <!-- BAL OLDAL: ELÉRHETŐSÉGEK (Üresen hagyva) -->
+      <div class="card" style="margin-bottom: 0; height: 100%;">
+        <h2>Elérhetőségek</h2>
+        
+        <p style="margin-bottom: 1.5rem;">
+          A <span class="yellow-highlight">Trans Europe Ultra</span> szervezőcsapata az alábbi hivatalos csatornákon érhető el:
+        </p>
+
+        <p style="margin-bottom: 1rem;">
+          <strong>📧 Általános e-mail cím:</strong><br>
+          <span style="color: #64748b; font-style: italic;">[hamarosan kitöltésre kerül]</span>
+        </p>
+
+        <p style="margin-bottom: 1rem;">
+          <strong>🆘 Versenyigazgatóság / SOS vonal:</strong><br>
+          <span style="color: #64748b; font-style: italic;">[hamarosan kitöltésre kerül]</span>
+        </p>
+
+        <p style="margin-bottom: 1rem;">
+          <strong>🏢 Központi Iroda:</strong><br>
+          <span style="color: #64748b; font-style: italic;">[hamarosan kitöltésre kerül]</span>
+        </p>
+
+        <p style="margin-bottom: 1rem;">
+          <strong>👤 Főszervező / Versenyigazgató:</strong><br>
+          <span style="color: #64748b; font-style: italic;">[hamarosan kitöltésre kerül]</span>
+        </p>
+
+        <p style="margin-bottom: 0;">
+          <strong>⏰ Ügyfélszolgálati idő:</strong><br>
+          <span style="color: #64748b; font-style: italic;">[hamarosan kitöltésre kerül]</span>
+        </p>
+      </div>
+
+      <!-- JOBB OLDAL: KAPCSOLATI ŰRLAP -->
+      <div class="card" style="margin-bottom: 0;">
+        <h2>Küldj üzenetet</h2>
+        
+        <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Köszönjük üzeneted! Hamarosan válaszolunk.');">
+          <div class="form-group">
+            <label for="name">Teljes név:</label>
+            <input type="text" id="name" name="name" placeholder="pl. Végvári Péter" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail cím:</label>
+            <input type="email" id="email" name="email" placeholder="peter@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Téma:</label>
+            <select id="subject" name="subject">
+              <option value="regisztracio">Regisztráció / Nevezés</option>
+              <option value="bikepacking">BP-200KM kérdések</option>
+              <option value="szabalyzat">Szabályzat / Útvonal</option>
+              <option value="szponzoracio">Szponzoráció / Sajtó</option>
+              <option value="egyeb">Egyéb téma</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Üzenet:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Írd ide a kérdésed vagy üzeneted..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Üzenet küldése</button>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2027–2030 Trans Europe Ultra. Minden jog fenntartva.</p>
+  </footer>
+</body>
+</html>

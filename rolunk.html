@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trans Europe Ultra – Rólunk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css?v=20260930-bp200km">
+  <script src="site.js" defer></script>
+  <style id="header-typography">
+/* Fő navigáció: nagyobb betűk és színes kiemelések. */
+header .site-nav .nav-primary li,
+header .site-nav .nav-primary a,
+header .site-nav .nav-primary a:is(.active, :hover, :focus, :active) {
+  font-size: 14px !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+header .site-nav .nav-primary a {
+  padding: .45rem .4rem;
+  border-radius: 6px;
+  transition: background-color .2s, color .2s;
+}
+header .site-nav .nav-primary a:hover {
+  background: rgba(255, 255, 255, .08);
+}
+header .site-nav .nav-primary a.active {
+  background: rgba(245, 158, 11, .12);
+  color: #f59e0b;
+  box-shadow: inset 0 -2px #f59e0b;
+}
+header .site-nav .nav-primary a.highlight-green { color: #4ade80 !important; }
+header .site-nav .nav-primary a.highlight-green:hover { background: rgba(74, 222, 128, .10); color: #86efac !important; }
+header .site-nav .nav-primary a.highlight-green.active { background: rgba(74, 222, 128, .12); box-shadow: inset 0 -2px #4ade80; }
+header .site-nav .nav-primary a.highlight-red { color: #ef4444 !important; }
+header .site-nav .nav-primary a.highlight-red:hover { background: rgba(239, 68, 68, .10); color: #f87171 !important; }
+header .site-nav .nav-primary a.highlight-red.active { background: rgba(239, 68, 68, .12); box-shadow: inset 0 -2px #ef4444; }
+header .site-nav .nav-secondary li,
+header .site-nav .nav-secondary a,
+header .site-nav .nav-secondary a:is(.active, :hover, :focus, :active) {
+  font-size: 12px !important;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+  </style>
+</head>
+<body>
+<header>
+    <nav class="site-nav" aria-label="Fő navigáció">
+      <div class="brand">
+        <a href="index.html" class="logo">TRANS EUROPE <span>ULTRA</span></a>
+        <span class="brand-motto">ORA ET LABORA</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">☰ Menü</button>
+      <div class="nav-content" id="site-menu">
+        <div class="nav-groups">
+          <ul class="nav-links nav-primary">
+            <li><a href="index.html">FŐOLDAL</a></li>
+            <li><a href="tortenelem.html">TÖRTÉNELEM</a></li>
+            <li><a href="foverseny.html" class="highlight-green">FŐVERSENY</a></li>
+            <li><a href="bikepacking-200.html" class="highlight-green">BP-200KM</a></li>
+            <li><a href="szakaszok.html">SZAKASZOK</a></li>
+            <li><a href="regisztracio.html" class="highlight-red">REGISZTRÁCIÓ</a></li>
+            <li><a href="szabalyzat.html">SZABÁLYZAT</a></li>
+          </ul>
+          <ul class="nav-links nav-secondary">
+            <li><a href="eredmenyek.html">EREDMÉNYEK</a></li>
+            <li><a href="rolunk.html" class="active" aria-current="page">RÓLUNK</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">KONTAKT</a></li>
+          </ul>
+        </div>
+        <div class="lang-switcher" aria-label="Nyelvválasztó">
+          <a href="#" class="active" title="Magyar" lang="hu">🇭🇺 HU</a>
+          <a href="#" title="English" lang="en">🇬🇧 EN</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="hero-card">
+      <span class="hero-badge">A KÉSZÍTŐK</span>
+      <h1>Rólunk</h1>
+      <p>A Trans Europe Ultra mögött a kerékpározás, a felfedezés és a közös alkotás szeretete áll. Ismerd meg a csapatot és azt, mit teszünk hozzá ehhez az európai kalandhoz!</p>
+      <p class="team-note">Az alábbi négy bemutatkozás fiktív minta; a végleges oldalon a valódi készítők adataival helyettesíthető.</p>
+    </section>
+    <section class="team-grid" aria-label="A készítők bemutatkozása">
+      <article class="bento-card team-card">
+        <span class="team-avatar" aria-hidden="true">KB</span>
+        <h2>Kovács Bence</h2>
+        <p class="team-role">Ötletgazda és versenyszervező</p>
+        <p>Bence hosszú kerékpártúrák közben találta meg azt a szabadságot, amelyet a Trans Europe Ultra résztvevőinek is szeretne átadni. A csapatban ő fogja össze az ötleteket, a tervezést és a szervezési feladatokat. Hisz abban, hogy egy nagy kaland a legelső pedálfordulattal kezdődik.</p>
+      </article>
+      <article class="bento-card team-card">
+        <span class="team-avatar" aria-hidden="true">SE</span>
+        <h2>Szabó Eszter</h2>
+        <p class="team-role">Útvonaltervező és térképes szakértő</p>
+        <p>Eszter a hegyi utak, a csendes mellékutak és a pontos térképek rajongója. A képzeletbeli csapat útvonalait úgy tervezi, hogy a kihívás mellett a táj és a helyi történetek is szerepet kapjanak. Számára a jó útvonal egyszerre világos, izgalmas és emlékezetes.</p>
+      </article>
+      <article class="bento-card team-card">
+        <span class="team-avatar" aria-hidden="true">NF</span>
+        <h2>Nagy Fanni</h2>
+        <p class="team-role">Arculat és weboldal</p>
+        <p>Fanni gondoskodik arról, hogy a verseny gondolata a képernyőn is átélhető legyen. Az arculat, a színek és a weboldal részletei mellett az olvashatóságot és az egyszerű tájékozódást tartja szem előtt. Szereti, amikor egy jól megtervezett oldal kedvet csinál az induláshoz.</p>
+      </article>
+      <article class="bento-card team-card">
+        <span class="team-avatar" aria-hidden="true">TM</span>
+        <h2>Tóth Márk</h2>
+        <p class="team-role">Közösség és kommunikáció</p>
+        <p>Márk szívesen hallgatja mások bringás történeteit, és örömmel kapcsolja össze a hasonló érdeklődésű embereket. A csapatban a közösségi kapcsolatokért és a közérthető kommunikációért felel. Úgy gondolja, a célba érkezés öröme még nagyobb, ha van kivel megosztani.</p>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2027–2030 Trans Europe Ultra. Minden jog fenntartva.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trans Europe Ultra - Eredmények</title>
+  <!-- Modern Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      text-align: left;
+    }
+
+    /* Alapértelmezett sorkizárás a bekezdésekre */
+    p, .bento-card p:not(.highlight-box) {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    /* Reszponzív navigáció */
+    @media (max-width: 968px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+        padding: 0;
+      }
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .lang-switcher a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.2rem 0.4rem;
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+    .lang-switcher a.active, .lang-switcher a:hover {
+      background: #f59e0b;
+      color: #0f172a;
+    }
+
+    .nav-links a.highlight-green {
+      color: #4ade80 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-green:hover {
+      color: #86efac !important;
+    }
+
+    /* Pirosas kiemelés a regisztráció gombhoz */
+    .nav-links a.highlight-red {
+      color: #ef4444 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-red:hover {
+      color: #f87171 !important;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Sárga kiemelések a szövegekben (kivéve a felső boxot) */
+    .yellow-highlight {
+      color: #d97706;
+      font-weight: 700;
+    }
+
+    /* Táblázatok modernizálása a bento dizájnhoz */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    th {
+      background-color: #f8fafc;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    /* Harmonika stílus */
+    .accordion-btn {
+      background-color: #0f172a;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: 0.3s;
+      margin-top: 1rem;
+    }
+    .accordion-btn.active, .accordion-btn:hover {
+      background-color: #1e293b;
+    }
+    .panel {
+      padding: 0 1rem;
+      display: none;
+      background-color: #f8fafc;
+      overflow: hidden;
+      border-radius: 0 0 8px 8px;
+      border: 1px solid #e2e8f0;
+      border-top: none;
+    }
+    .panel ul {
+      padding: 1rem 0 1rem 1.5rem;
+      margin: 0;
+    }
+    .panel li {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      padding: 3.5rem 1rem;
+      margin-top: 5rem;
+      background-color: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css?v=20260930-bp200km">
+  <script src="site.js" defer></script>
+  <style id="header-typography">
+/* Fő navigáció: nagyobb betűk és színes kiemelések. */
+header .site-nav .nav-primary li,
+header .site-nav .nav-primary a,
+header .site-nav .nav-primary a:is(.active, :hover, :focus, :active) {
+  font-size: 14px !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+header .site-nav .nav-primary a {
+  padding: .45rem .4rem;
+  border-radius: 6px;
+  transition: background-color .2s, color .2s;
+}
+header .site-nav .nav-primary a:hover {
+  background: rgba(255, 255, 255, .08);
+}
+header .site-nav .nav-primary a.active {
+  background: rgba(245, 158, 11, .12);
+  color: #f59e0b;
+  box-shadow: inset 0 -2px #f59e0b;
+}
+header .site-nav .nav-primary a.highlight-green { color: #4ade80 !important; }
+header .site-nav .nav-primary a.highlight-green:hover { background: rgba(74, 222, 128, .10); color: #86efac !important; }
+header .site-nav .nav-primary a.highlight-green.active { background: rgba(74, 222, 128, .12); box-shadow: inset 0 -2px #4ade80; }
+header .site-nav .nav-primary a.highlight-red { color: #ef4444 !important; }
+header .site-nav .nav-primary a.highlight-red:hover { background: rgba(239, 68, 68, .10); color: #f87171 !important; }
+header .site-nav .nav-primary a.highlight-red.active { background: rgba(239, 68, 68, .12); box-shadow: inset 0 -2px #ef4444; }
+header .site-nav .nav-secondary li,
+header .site-nav .nav-secondary a,
+header .site-nav .nav-secondary a:is(.active, :hover, :focus, :active) {
+  font-size: 12px !important;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav" aria-label="Fő navigáció">
+      <div class="brand">
+        <a href="index.html" class="logo">TRANS EUROPE <span>ULTRA</span></a>
+        <span class="brand-motto">ORA ET LABORA</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">☰ Menü</button>
+      <div class="nav-content" id="site-menu">
+        <div class="nav-groups">
+          <ul class="nav-links nav-primary">
+            <li><a href="index.html">FŐOLDAL</a></li>
+            <li><a href="tortenelem.html">TÖRTÉNELEM</a></li>
+            <li><a href="foverseny.html" class="highlight-green">FŐVERSENY</a></li>
+            <li><a href="bikepacking-200.html" class="highlight-green">BP-200KM</a></li>
+            <li><a href="szakaszok.html">SZAKASZOK</a></li>
+            <li><a href="regisztracio.html" class="highlight-red">REGISZTRÁCIÓ</a></li>
+            <li><a href="szabalyzat.html">SZABÁLYZAT</a></li>
+          </ul>
+          <ul class="nav-links nav-secondary">
+            <li><a href="eredmenyek.html" class="active" aria-current="page">EREDMÉNYEK</a></li>
+            <li><a href="rolunk.html">RÓLUNK</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">KONTAKT</a></li>
+          </ul>
+        </div>
+        <div class="lang-switcher" aria-label="Nyelvválasztó">
+          <a href="#" class="active" title="Magyar" lang="hu">🇭🇺 HU</a>
+          <a href="#" title="English" lang="en">🇬🇧 EN</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BENTO GRID KEZDETE -->
+  <div class="bento-container">
+
+    <!-- HERO / FŐ CÍM (Felső box: sárga nélkül, sötét szöveggel) -->
+    <div class="bento-card col-span-2 hero-card" style="text-align: center; padding: 2.5rem 2rem;">
+      <span class="hero-badge">Ranglisták</span>
+      <h1 style="font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin: 0.5rem 0; color: #0f172a;">HIVATALOS EREDMÉNYEK</h1>
+      <p style="font-size: 1.05rem; color: #334155; max-width: 750px; margin: 0 auto; text-align: center; line-height: 1.6;">
+        Főverseny (5 760 km) & BP-200KM Összesített Rank
+      </p>
+    </div>
+
+    <!-- FŐVERSENY -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">🚴‍♀️ 1. FŐVERSENY: TRANS EUROPE ULTRA</h2>
+      
+      <h3 style="color: #d97706; margin-top: 1.5rem; font-weight: 700;">Női Top 3</h3>
+      <div style="overflow-x: auto;">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Görgethető táblázat"><table>
+          <thead>
+            <tr>
+              <th>Hely</th>
+              <th>Név</th>
+              <th>Nemzet</th>
+              <th>Idő</th>
+              <th>Státusz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td>Penelope „Küllőangyal” Pedalstorm</td>
+              <td>🇬🇧 GBR</td>
+              <td>21 nap 04 óra 12 perc</td>
+              <td>🥇 Bajnok & Női Pályacsúcs</td>
+            </tr>
+            <tr>
+              <td>2.</td>
+              <td>Schwinn Sára</td>
+              <td>🇭🇺 HUN</td>
+              <td>22 nap 18 óra 45 perc</td>
+              <td>🥈 100% Nevezési díj visszatérítés</td>
+            </tr>
+            <tr>
+              <td>3.</td>
+              <td>Olga Chainbreaker</td>
+              <td>🇺🇦 UKR</td>
+              <td>24 nap 02 óra 10 perc</td>
+              <td>🥉 100% Nevezési díj visszatérítés</td>
+            </tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <h3 style="color: #d97706; margin-top: 2rem; font-weight: 700;">Férfi Top 3</h3>
+      <div style="overflow-x: auto;">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Görgethető táblázat"><table>
+          <thead>
+            <tr>
+              <th>Hely</th>
+              <th>Név</th>
+              <th>Nemzet</th>
+              <th>Idő</th>
+              <th>Státusz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td>Balla István</td>
+              <td>🇭🇺 HUN</td>
+              <td>19 nap 14 óra 30 perc</td>
+              <td>🥇 Győztes (Transzatlanti Dupla!)</td>
+            </tr>
+            <tr>
+              <td>2.</td>
+              <td>Sven „Láncolaj” Lindqvist</td>
+              <td>🇸🇪 SWE</td>
+              <td>20 nap 08 óra 15 perc</td>
+              <td>🥈 100% Nevezési díj visszatérítés</td>
+            </tr>
+            <tr>
+              <td>3.</td>
+              <td>Jean-Luc Bonk</td>
+              <td>🇫🇷 FRA</td>
+              <td>21 nap 11 óra 05 perc</td>
+              <td>🥉 100% Nevezési díj visszatérítés</td>
+            </tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+
+    <!-- MELLÉKVERSENY LEADERBOARD -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">🏔️ MELLÉKVERSENY: <span class="yellow-highlight">BP-200KM</span> TOP 10</h2>
+
+      <h3 style="color: #d97706; margin-top: 1.5rem; font-weight: 700;">Női Challenge Leaderboard</h3>
+      <div style="overflow-x: auto;">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Görgethető táblázat"><table>
+          <thead>
+            <tr>
+              <th>Hely</th>
+              <th>Név</th>
+              <th>Szakaszok</th>
+              <th>Össz-idő</th>
+              <th>Cím / Elismerés</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1.</td><td>Nyereg-Nagy Piroska (HUN)</td><td>12 / 12</td><td>72:14:10</td><td>👑 Trilógia Arany Bajnok</td></tr>
+            <tr><td>2.</td><td>Fiona Fastfoot (IRL)</td><td>12 / 12</td><td>74:25:11</td><td>🥈 Trilógia Arany</td></tr>
+            <tr><td>3.</td><td>Petra Puhanymentes (CZE)</td><td>12 / 12</td><td>76:40:55</td><td>🥉 Trilógia Arany</td></tr>
+            <tr><td>4.</td><td>Clara Coffee-Break (ITA)</td><td>12 / 12</td><td>79:02:18</td><td>🏅 Trilógia Arany</td></tr>
+            <tr><td>5.</td><td>Helga Helm-Heated (GER)</td><td>8 / 12</td><td>51:15:40</td><td>Ezüst fokozat</td></tr>
+            <tr><td>6.</td><td>Katalin „Lánc-Kati” (HUN)</td><td>7 / 12</td><td>46:33:02</td><td>Közép-Európa Királynője</td></tr>
+            <tr><td>7.</td><td>Sarah Graveline (FRA)</td><td>6 / 12</td><td>38:48:29</td><td>Nyugat-Európa Szakértő</td></tr>
+            <tr><td>8.</td><td>Carmen Cadence (ESP)</td><td>5 / 12</td><td>32:05:12</td><td>Pireneusi Vándor</td></tr>
+            <tr><td>9.</td><td>Zuzana Ziháló (SVK)</td><td>5 / 12</td><td>33:20:44</td><td>Kárpáti Vagány</td></tr>
+            <tr><td>10.</td><td>Rita Wandern (AUT)</td><td>4 / 12</td><td>26:50:01</td><td>Bronz Jelvényes</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <button class="accordion-btn">Női résztvevők által teljesített pontos szakaszok</button>
+      <div class="panel">
+        <ul>
+          <li><strong>Nyereg-Nagy Piroska (12):</strong> POR, ESP, AND, FRA, SUI, ITA, AUT, GER, CZE, POL, SVK, HUN</li>
+          <li><strong>Fiona Fastfoot (12):</strong> POR, ESP, AND, FRA, SUI, ITA, AUT, GER, CZE, POL, SVK, HUN</li>
+          <li><strong>Petra Puhanymentes (12):</strong> POR, ESP, AND, FRA, SUI, ITA, AUT, GER, CZE, POL, SVK, HUN</li>
+          <li><strong>Clara Coffee-Break (12):</strong> POR, ESP, AND, FRA, SUI, ITA, AUT, GER, CZE, POL, SVK, HUN</li>
+          <li><strong>Helga Helm-Heated (8):</strong> POR, ESP, FRA, SUI, ITA, AUT, GER, CZE</li>
+          <li><strong>Katalin „Lánc-Kati” (7):</strong> AUT, GER, CZE, POL, SVK, HUN, ITA</li>
+          <li><strong>Sarah Graveline (6):</strong> POR, ESP, AND, FRA, SUI, ITA</li>
+          <li><strong>Carmen Cadence (5):</strong> POR, ESP, AND, FRA, SUI</li>
+          <li><strong>Zuzana Ziháló (5):</strong> GER, CZE, POL, SVK, HUN</li>
+          <li><strong>Rita Wandern (4):</strong> SUI, ITA, AUT, GER</li>
+        </ul>
+      </div>
+
+      <h3 style="color: #d97706; margin-top: 2.5rem; font-weight: 700;">Férfi Challenge Leaderboard</h3>
+      <div style="overflow-x: auto;">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Görgethető táblázat"><table>
+          <thead>
+            <tr>
+              <th>Hely</th>
+              <th>Név</th>
+              <th>Szakaszok</th>
+              <th>Össz-idő</th>
+              <th>Cím / Elismerés</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1.</td><td>Comb-Erős Csaba (HUN)</td><td>12 / 12</td><td>68:45:30</td><td>👑 Trilógia Arany Bajnok</td></tr>
+            <tr><td>2.</td><td>Pedro „No-Pinch” Pancho (ESP)</td><td>12 / 12</td><td>69:52:14</td><td>🥈 Trilógia Arany</td></tr>
+            <tr><td>3.</td><td>Hans Van Der Watt (NED)</td><td>12 / 12</td><td>71:01:08</td><td>🥉 Trilógia Arany</td></tr>
+            <tr><td>4.</td><td>Defekt Dénes (HUN)</td><td>12 / 12</td><td>73:14:22</td><td>🏅 Trilógia Arany</td></tr>
+            <tr><td>5.</td><td>Marco Bonkini (ITA)</td><td>9 / 12</td><td>56:28:45</td><td>Ezüst fokozat</td></tr>
+            <tr><td>6.</td><td>Lucas „Slick” Schneider (GER)</td><td>7 / 12</td><td>43:35:10</td><td>Alpi Mester</td></tr>
+            <tr><td>7.</td><td>Gőzerő Géza (HUN)</td><td>6 / 12</td><td>37:50:00</td><td>Keleti Blokk Bajnok</td></tr>
+            <tr><td>8.</td><td>Pierre Pneu-Crevé (FRA)</td><td>5 / 12</td><td>31:05:33</td><td>Mediterrán Harcos</td></tr>
+            <tr><td>9.</td><td>Andrzej Wattowski (POL)</td><td>5 / 12</td><td>31:18:19</td><td>Tatra Vadász</td></tr>
+            <tr><td>10.</td><td>Végkimerült Victor (ROU)</td><td>4 / 12</td><td>25:40:12</td><td>Bronz Jelvényes</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <button class="accordion-btn">Férfi résztvevők által teljesített pontos szakaszok</button>
+      <div class="panel">
+        <ul>
+          <li><strong>Comb-Erős Csaba (12):</strong> POR, ESP, AND, FRA, SUI, ITA, AUT, GER, CZE, POL, SVK, HUN</li>
+          <li><strong>Pedro „No-Pinch” Pancho (12):</strong> POR, ESP, AND, FRA, SUI, ITA, AUT, GER, CZE, POL, SVK, HUN</li>
+          <li><strong>Hans Van Der Watt (12):</strong> POR, ESP, AND, FRA, SUI, ITA, AUT, GER, CZE, POL, SVK, HUN</li>
+          <li><strong>Defekt Dénes (12):</strong> POR, ESP, AND, FRA, SUI, ITA, AUT, GER, CZE, POL, SVK, HUN</li>
+          <li><strong>Marco Bonkini (9):</strong> POR, ESP, AND, FRA, SUI, ITA, AUT, GER, CZE</li>
+          <li><strong>Lucas „Slick” Schneider (7):</strong> FRA, SUI, ITA, AUT, GER, CZE, POL</li>
+          <li><strong>Gőzerő Géza (6):</strong> AUT, GER, CZE, POL, SVK, HUN</li>
+          <li><strong>Pierre Pneu-Crevé (5):</strong> POR, ESP, AND, FRA, ITA</li>
+          <li><strong>Andrzej Wattowski (5):</strong> GER, CZE, POL, SVK, HUN</li>
+          <li><strong>Végkimerült Victor (4):</strong> CZE, POL, SVK, HUN</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <!-- BENTO GRID VÉGE -->
+
+  <footer>
+    <p>&copy; 2027–2030 Trans Europe Ultra. Minden jog fenntartva.</p>
+  </footer>
+
+  
+</body>
+</html>

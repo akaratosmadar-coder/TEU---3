@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trans Europe Ultra - BP-200KM</title>
+  <!-- Modern Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=RGu93097_icpK5wYHPWJofCf_akIhFboLAZHH0pxHiGMhLkKSqYnTKra_phWRt145KcNrfv6ACtDWIpQAu3pkzjDaYzBAXhpVq1Toer_BhdXG4JPyeTn7KfMhgm46S4Nr7in9WaxxlTpDj4l1GAonstm21mc967jL5mts6TidbOOKAsAcBRhJsbbXKgto2pukQYdjldp1uklF9R_Ls3goCdprGihAb7u2U2ut-njRcmXyeW1qs9Wp62FjRYhhyVYqDysB1bP8x1T3v1Y_49aSvMgY0GsQ6kbfJ9WnP026RCzvsej7_72RdvFoX3nMiNQdPcaUiaTDMPNWutHeEjnyg" charset="UTF-8"></script><style>
+    body {
+      font-family: 'Inter', sans-serif;
+      text-align: left;
+    }
+
+    /* Alapértelmezett sorkizárás a bekezdésekre */
+    p, .bento-card p:not(.highlight-box) {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    /* Reszponzív navigáció */
+    @media (max-width: 968px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+        padding: 0;
+      }
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .lang-switcher a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.2rem 0.4rem;
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+    .lang-switcher a.active, .lang-switcher a:hover {
+      background: #f59e0b;
+      color: #0f172a;
+    }
+
+    .nav-links a.highlight-green {
+      color: #4ade80 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-green:hover {
+      color: #86efac !important;
+    }
+
+    /* Pirosas kiemelés a regisztráció gombhoz */
+    .nav-links a.highlight-red {
+      color: #ef4444 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-red:hover {
+      color: #f87171 !important;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Táblázat stílus a bento kártyákhoz igazítva */
+    table.challenge-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      color: #0f172a;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    table.challenge-table th, table.challenge-table td {
+      border: 1px solid #e2e8f0;
+      padding: 0.85rem;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    table.challenge-table th {
+      background: #0f172a;
+      color: #f59e0b;
+      font-weight: 600;
+    }
+    table.challenge-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    /* Harmonika (Accordion) gomb stílusa */
+    .accordion-btn {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      cursor: pointer;
+      padding: 1rem 1.25rem;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+      transition: background 0.3s;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+    }
+    .accordion-btn:hover, .accordion-btn.active {
+      background: linear-gradient(135deg, #d97706, #b45309);
+    }
+    .panel {
+      padding: 0 0.5rem;
+      display: none;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    footer {
+      padding: 3.5rem 1rem;
+      margin-top: 5rem;
+      background-color: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    html { min-height: 100%; }
+    body { min-height: 100vh; margin: 0; padding-bottom: 0; display: flex; flex-direction: column; }
+    body > header, body > .bento-container { flex-shrink: 0; }
+    body > footer { margin-top: auto; margin-bottom: 0; flex-shrink: 0; }
+    .stage-download-notice { grid-column: 1 / -1; background: #fffbeb; border: 1px solid #fcd34d; }
+    .bento-card.stage-download-notice p { margin: 0; text-align: center !important; }
+    .stage-download-notice a { color: #b45309; font-weight: 800; text-decoration: underline; }
+
+    .bento-card p.registration-notice {
+      background: #fffbeb; border: 1px solid #fcd34d; border-left: 5px solid #d97706;
+      border-radius: 10px; padding: 1.25rem; margin: 1.25rem 0;
+      color: #78350f; font-weight: 600; line-height: 1.75;
+    }
+    .bp-image-placeholder {
+      min-height: 240px; display: flex; align-items: center; justify-content: center;
+      background: #ffffff; border: 1px solid #e2e8f0;
+    }
+    .bp-image-placeholder p { margin: 0; text-align: center; color: #64748b; }
+  </style>
+  <link rel="stylesheet" href="responsive.css?v=20260930-bp200km">
+  <script src="site.js" defer></script>
+  <style id="header-typography">
+/* Fő navigáció: nagyobb betűk és színes kiemelések. */
+header .site-nav .nav-primary li,
+header .site-nav .nav-primary a,
+header .site-nav .nav-primary a:is(.active, :hover, :focus, :active) {
+  font-size: 14px !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+header .site-nav .nav-primary a {
+  padding: .45rem .4rem;
+  border-radius: 6px;
+  transition: background-color .2s, color .2s;
+}
+header .site-nav .nav-primary a:hover {
+  background: rgba(255, 255, 255, .08);
+}
+header .site-nav .nav-primary a.active {
+  background: rgba(245, 158, 11, .12);
+  color: #f59e0b;
+  box-shadow: inset 0 -2px #f59e0b;
+}
+header .site-nav .nav-primary a.highlight-green { color: #4ade80 !important; }
+header .site-nav .nav-primary a.highlight-green:hover { background: rgba(74, 222, 128, .10); color: #86efac !important; }
+header .site-nav .nav-primary a.highlight-green.active { background: rgba(74, 222, 128, .12); box-shadow: inset 0 -2px #4ade80; }
+header .site-nav .nav-primary a.highlight-red { color: #ef4444 !important; }
+header .site-nav .nav-primary a.highlight-red:hover { background: rgba(239, 68, 68, .10); color: #f87171 !important; }
+header .site-nav .nav-primary a.highlight-red.active { background: rgba(239, 68, 68, .12); box-shadow: inset 0 -2px #ef4444; }
+header .site-nav .nav-secondary li,
+header .site-nav .nav-secondary a,
+header .site-nav .nav-secondary a:is(.active, :hover, :focus, :active) {
+  font-size: 12px !important;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav" aria-label="Fő navigáció">
+      <div class="brand">
+        <a href="index.html" class="logo">TRANS EUROPE <span>ULTRA</span></a>
+        <span class="brand-motto">ORA ET LABORA</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">☰ Menü</button>
+      <div class="nav-content" id="site-menu">
+        <div class="nav-groups">
+          <ul class="nav-links nav-primary">
+            <li><a href="index.html">FŐOLDAL</a></li>
+            <li><a href="tortenelem.html">TÖRTÉNELEM</a></li>
+            <li><a href="foverseny.html" class="highlight-green">FŐVERSENY</a></li>
+            <li><a href="bikepacking-200.html" class="highlight-green active" aria-current="page">BP-200KM</a></li>
+            <li><a href="szakaszok.html">SZAKASZOK</a></li>
+            <li><a href="regisztracio.html" class="highlight-red">REGISZTRÁCIÓ</a></li>
+            <li><a href="szabalyzat.html">SZABÁLYZAT</a></li>
+          </ul>
+          <ul class="nav-links nav-secondary">
+            <li><a href="eredmenyek.html">EREDMÉNYEK</a></li>
+            <li><a href="rolunk.html">RÓLUNK</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">KONTAKT</a></li>
+          </ul>
+        </div>
+        <div class="lang-switcher" aria-label="Nyelvválasztó">
+          <a href="#" class="active" title="Magyar" lang="hu">🇭🇺 HU</a>
+          <a href="#" title="English" lang="en">🇬🇧 EN</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BENTO GRID KEZDETE -->
+  <div class="bento-container">
+
+    <!-- HERO / FŐ CÍM -->
+    <div class="bento-card col-span-2 hero-card" style="text-align: center; padding: 2.5rem 2rem;">
+      <h1 style="font-size: 2.5rem; font-weight: 800; letter-spacing: -0.5px; margin: 0.5rem 0; color: #0f172a;">TRANS EUROPE ULTRA</h1>
+      <h2 style="font-size: 1.75rem; font-weight: 800; margin: 0 0 1rem; color: #d97706;">BP-200KM</h2>
+      <p style="font-size: 1.05rem; color: #334155; max-width: 750px; margin: 0 auto; text-align: center; line-height: 1.6;">
+        A bikepacking a szabadság, a felfedezés és a saját erőből megtett út élménye. A BP-200KM ezt az életérzést sűríti egy közel 200 kilométeres kihívásba: magad hajtod a kerékpárt, viszed a felszerelésedet, és önellátóan gondoskodsz az élelmedről, a pihenésedről és az útközben felmerülő nehézségek megoldásáról.
+      </p>
+    </div>
+
+    <div class="bento-card col-span-2 stage-download-notice">
+      <p>A szakaszok GPX-fájljai a <a href="szakaszok.html">„Szakaszok”</a> fül alatt tölthetők le, amint elérhetővé válnak.</p>
+    </div>
+
+    <!-- BP-200KM KIHÍVÁS -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">BP-200KM</h2>
+      <p>A BP-200KM a Trans Europe Ultra útvonalához kapcsolódó, saját erőből és önellátóan teljesítendő bikepacking kihívás. A résztvevők minden országban a Trans Europe Ultra – Part 1 hivatalos, kötött GPX-nyomvonalának egy kijelölt, pontosan ~200 km-es szakaszát teljesíthetik, amely magában foglalja az adott nemzet legmagasabban kerékpározható csúcsát vagy hágóját.</p>
+      <p style="margin-top: 0.75rem;"><strong>Műfaj:</strong> 2 napos, kemény kihívás (Gran Fondo / Ultra-Stage formátumban), önellátó vagy fél-önellátó rendszerben.</p>
+      <p style="margin-top: 0.75rem;">Minden nemzeti szakasz logisztikailag kényelmes, önellátó hétvégi bikepacking kalandként teljesíthető:</p>
+      
+      <ul style="margin-top: 1rem; padding-left: 1.2rem; line-height: 1.7;">
+        <li style="margin-bottom: 0.75rem;"><strong>1. NAP – A hivatalos csúcsszakasz (~200 km):</strong> A rajt egy könnyen megközelíthető, jó vasúti csatlakozással és parkolókkal rendelkező kiinduló városból indul. A résztvevők a hivatalos GPX-nyomvonalat követve megmásszák az adott nemzet legmagasabb kerékpározható csúcsát, majd a hegy túloldalán fekvő településen zárják a napot. Ez képezi a digitálisan igazolandó, hivatalos versenyszakaszt.</li>
+        <li><strong>2. NAP – A szabad visszaút:</strong> A kerékpárosok a másnapot kihasználva egy teljesen szabadon választott nyomvonalon – a magashegyi csúcsot kikerülve, völgyi vagy sík utakon, esetleg az eredeti úton – tekernek vissza a kiindulási rajtállomásra a járműveikhez vagy a vonathoz.</li>
+      </ul>
+      
+      <p style="margin-top: 1rem;"><strong>Időzítés és regisztrációs díj:</strong> a fő versenytől függetlenül, bármikor teljesíthető – indulás a regisztráció után, a 2027-es főverseny rajtja után lehetséges. A regisztrációs díj: 65€.</p>
+      <p class="registration-notice">A kezdeményezést önerőből, külső támogatók nélkül indítjuk, ezért a részszakaszok teljesítésének nyilvántartását csak megfelelő érdeklődés és a program sikeres elindulása esetén tudjuk kialakítani és elindítani. A regisztráló a jelentkezésével elfogadja, hogy amennyiben a program nem indul el sikeresen, a befizetett regisztrációs díjat nem térítjük vissza, hanem a weboldal fenntartására és karbantartására fordítjuk.</p>
+
+      <button class="accordion-btn">Kategóriák, díjazás és szabályzat (Mutass többet)</button>
+      <div class="panel">
+        <h3 style="color: #d97706; margin-top: 1.5rem; font-size: 1.15rem;">Kategóriák és bélyegzőkönyv (Stage Passport):</h3>
+        <ul style="margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.7;">
+          <li><strong>Single Stage Finisher:</strong> A versenyző kiválaszt egyetlen országot (pl. a magyar, osztrák vagy spanyol 200 km-t) és azt teljesíti.</li>
+          <li><strong>National Collector:</strong> A kerékpáros az évek során összegyűjtheti mind a 12 ország 200 km-es „királyi szakaszát”. A teljesítésről minden szakasz után hivatalos oklevelet és fém pecsétet kap a nyomtatott útkönyvébe (Stage Passport).</li>
+          <li><strong>TEU-C 200 Grandmaster:</strong> Aki 3+1 éven belül mind a 12 nemzeti szakaszt teljesíti, megkapja a főversennyel egyenértékű Grandmaster elismerést.</li>
+        </ul>
+
+        <h3 style="color: #d97706; margin-top: 1.5rem; font-size: 1.15rem;">Teljesített szakaszok és díjazás:</h3>
+        <div style="overflow-x: auto;">
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Görgethető táblázat"><table class="challenge-table">
+            <thead>
+              <tr>
+                <th>Teljesített szakaszok</th>
+                <th>Fokozat / titulus</th>
+                <th>Fizikai díj és elismerés</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 szakasz (~200 km)</td>
+                <td>Stage Finisher</td>
+                <td>Névre szóló oklevél</td>
+              </tr>
+              <tr>
+                <td>3 szakasz (~600 km)</td>
+                <td>TEU Trilogy Finisher (Bronz)</td>
+                <td>Bronz Trilogy érem, szőtt mez-felvarró, „3-Star” Passport-pecsét</td>
+              </tr>
+              <tr>
+                <td>6 szakasz (~1.200 km)</td>
+                <td>Half-Way Climber (Ezüst)</td>
+                <td>Ezüst érem, egyedi TEU Challenge kerékpáros mez (limitált kiadás)</td>
+              </tr>
+              <tr>
+                <td>9 szakasz (~1.800 km)</td>
+                <td>Master Explorer (Arany)</td>
+                <td>Arany érem, + VIP rajtjogosultság</td>
+              </tr>
+              <tr>
+                <td>12 szakasz (~2.400 km)</td>
+                <td>TEU Grandmaster (Gyémánt)</td>
+                <td>A főversennyel egyenértékű Grandmaster trófea, örökös rajtszám-visszavonás és ingyenes nevezés a főversenyre</td>
+              </tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <h3 style="color: #d97706; margin-top: 1.5rem; font-size: 1.15rem;">BP-200KM – Regisztráció és teljesítési szabályzat</h3>
+        <ol style="margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.7;">
+          <li style="margin-bottom: 0.75rem;"><strong>A 1+3 éves regisztrációs modell (2027–2030):</strong> Egyetlen regisztráció (65€) = 4 szezonos jogosultság. A kerékpáros egyetlen nevezéssel kiváltja a Digital Stage Passport-ot, amely a 2027-es Pioneer (Úttörő) évben indul, és további 3 éven át (2028, 2029, 2030) érvényes. Rugalmas időbeosztás: 4 teljes szezon áll rendelkezésre a saját tempóban, tetszőleges sorrendben történő teljesítéshez.</li>
+          <li><strong>Önbevallásos igazolási rendszer (Honor System):</strong> Bürokráciamentes, digitális igazolás a kerékpáros közösségi platformokon keresztül. Egyéni teljesítés a megadott időablakban. Beküldés: Strava hivatkozás, Garmin Connect / Komoot link vagy a letöltött GPX fájl feltöltése az online profilra. Jóváhagyás: a szervezők ellenőrzik a nyomvonal egyezőségét és az adott nemzeti csúcs érintését, ezt követően a szakasz „TELJESÍTVE” státuszt kap a digitális útlevélben.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Kép feltöltésekor a helyőrző szöveg helyére img elem kerülhet. -->
+    <div class="bento-card col-span-2 bp-image-placeholder" aria-label="Bikepacking kép helye">
+      <img src="bikepacking.jpg" alt="Bikepacking kaland" style="display: block; width: 100%; height: auto; border-radius: 12px;" loading="lazy">
+    </div>
+
+
+</div>
+  <!-- BENTO GRID VÉGE -->
+
+  <footer>
+    <p>&copy; 2027–2030 Trans Europe Ultra. Minden jog fenntartva.</p>
+  </footer>
+
+  
+</body>
+</html>

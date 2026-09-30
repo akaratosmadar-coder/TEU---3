@@ -1,0 +1,13 @@
+TRANS EUROPE ULTRA – Egységesített oldalak
+
+A csomag tizenegy HTML-oldalt, közös style.css és responsive.css fájlt, valamint site.js fájlt tartalmaz. Ezeket együtt másold a weboldal megfelelő könyvtárába. Készíts biztonsági másolatot a jelenlegi fájlokról a csere előtt.
+
+Az index.html alapján egységes fejléc, ORA ET LABORA felirat, Inter betűtípus, címsorok, lábléc, mobilmenü, mobilos oszlopelrendezés és görgethető táblázatok készültek. A szöveges tartalom és az űrlapok célcíme változatlan.
+
+A feltöltött példányok páronként azonosak voltak, ezért minden oldal egyszer szerepel, a navigációban használt eredeti fájlnéven.
+
+Nem szerepelt a feltöltésben az eredeti style.css, így a közös elrendezés a HTML-ben látható stílusok alapján készült. A meglévő képeket, videókat és egyéb médiafájlokat hagyd a helyükön: ezek nincsenek ebben a csomagban. A placeholder-hero.jpg továbbra is a saját képeddel pótolandó. Az EN hivatkozások jelenleg # címre mutatnak, az űrlapok szerveroldali bekötése nem része ennek a stílusjavításnak.
+
+Frissítés: két balra igazított menüsor; kisebb EREDMÉNYEK, RÓLUNK, FAQ és KONTAKT feliratok. Új rolunk.html négy fiktív bemutatkozókártyával.
+
+Frissítés: BP-200KM név minden menüben és leírásban; 14 px-es félkövér felső menüsor, arany aktív kiemelés, zöld versenyfülek és piros regisztráció. Az oldal fájlneve továbbra is bikepacking-200.html, így a hivatkozások működnek.

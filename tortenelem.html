@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trans Europe Ultra - Történelem és Szellemi Örökség</title>
+  <!-- Modern Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #334155;
+    }
+
+    /* Egységes szövegtest és címsor méretek */
+    p, li, .bento-card p:not(.highlight-box) {
+      font-size: 1rem;
+      text-align: justify;
+      text-justify: inter-word;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.5px;
+      color: #0f172a !important;
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 1.5rem !important;
+      font-weight: 700 !important;
+      color: #0f172a !important;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 968px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+        padding: 0;
+      }
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .lang-switcher a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.2rem 0.4rem;
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+    .lang-switcher a.active, .lang-switcher a:hover {
+      background: #f59e0b;
+      color: #0f172a;
+    }
+
+    .nav-links a.highlight-green {
+      color: #4ade80 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-green:hover {
+      color: #86efac !important;
+    }
+
+    /* Pirosas kiemelés a regisztráció gombhoz */
+    .nav-links a.highlight-red {
+      color: #ef4444 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-red:hover {
+      color: #f87171 !important;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Középre rendezett sárga kiemelt szövegdoboz */
+    .highlight-box {
+      background: #fffbeb;
+      border: 2px solid #fcd34d;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      text-align: center !important;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #b45309;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.08);
+      line-height: 1.5;
+    }
+
+    /* Külső hivatkozás stílusa a szövegen belül */
+    .content-link {
+      color: #d97706;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .content-link:hover {
+      color: #b45309;
+      text-decoration: underline;
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css?v=20260930-bp200km">
+  <script src="site.js" defer></script>
+  <style id="header-typography">
+/* Fő navigáció: nagyobb betűk és színes kiemelések. */
+header .site-nav .nav-primary li,
+header .site-nav .nav-primary a,
+header .site-nav .nav-primary a:is(.active, :hover, :focus, :active) {
+  font-size: 14px !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+header .site-nav .nav-primary a {
+  padding: .45rem .4rem;
+  border-radius: 6px;
+  transition: background-color .2s, color .2s;
+}
+header .site-nav .nav-primary a:hover {
+  background: rgba(255, 255, 255, .08);
+}
+header .site-nav .nav-primary a.active {
+  background: rgba(245, 158, 11, .12);
+  color: #f59e0b;
+  box-shadow: inset 0 -2px #f59e0b;
+}
+header .site-nav .nav-primary a.highlight-green { color: #4ade80 !important; }
+header .site-nav .nav-primary a.highlight-green:hover { background: rgba(74, 222, 128, .10); color: #86efac !important; }
+header .site-nav .nav-primary a.highlight-green.active { background: rgba(74, 222, 128, .12); box-shadow: inset 0 -2px #4ade80; }
+header .site-nav .nav-primary a.highlight-red { color: #ef4444 !important; }
+header .site-nav .nav-primary a.highlight-red:hover { background: rgba(239, 68, 68, .10); color: #f87171 !important; }
+header .site-nav .nav-primary a.highlight-red.active { background: rgba(239, 68, 68, .12); box-shadow: inset 0 -2px #ef4444; }
+header .site-nav .nav-secondary li,
+header .site-nav .nav-secondary a,
+header .site-nav .nav-secondary a:is(.active, :hover, :focus, :active) {
+  font-size: 12px !important;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav" aria-label="Fő navigáció">
+      <div class="brand">
+        <a href="index.html" class="logo">TRANS EUROPE <span>ULTRA</span></a>
+        <span class="brand-motto">ORA ET LABORA</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">☰ Menü</button>
+      <div class="nav-content" id="site-menu">
+        <div class="nav-groups">
+          <ul class="nav-links nav-primary">
+            <li><a href="index.html">FŐOLDAL</a></li>
+            <li><a href="tortenelem.html" class="active" aria-current="page">TÖRTÉNELEM</a></li>
+            <li><a href="foverseny.html" class="highlight-green">FŐVERSENY</a></li>
+            <li><a href="bikepacking-200.html" class="highlight-green">BP-200KM</a></li>
+            <li><a href="szakaszok.html">SZAKASZOK</a></li>
+            <li><a href="regisztracio.html" class="highlight-red">REGISZTRÁCIÓ</a></li>
+            <li><a href="szabalyzat.html">SZABÁLYZAT</a></li>
+          </ul>
+          <ul class="nav-links nav-secondary">
+            <li><a href="eredmenyek.html">EREDMÉNYEK</a></li>
+            <li><a href="rolunk.html">RÓLUNK</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">KONTAKT</a></li>
+          </ul>
+        </div>
+        <div class="lang-switcher" aria-label="Nyelvválasztó">
+          <a href="#" class="active" title="Magyar" lang="hu">🇭🇺 HU</a>
+          <a href="#" title="English" lang="en">🇬🇧 EN</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BENTO GRID KEZDETE -->
+  <div class="bento-container">
+
+    <!-- HERO / FŐ CÍM (2 oszlop) -->
+    <div class="bento-card col-span-2 hero-card" style="text-align: center; padding: 2.5rem 2rem;">
+      <span class="hero-badge">SZELLEMI GYÖKEREK ÉS ÖRÖKSÉG</span>
+      <h1>Történelem & Hagyományok</h1>
+      <p style="max-width: 750px; margin: 0 auto;">
+        A Trans Europe Ultra nem csupán egy fizikai kihívás, hanem egy történelmi utazás is, amely az atlanti partvidék felfedezéseitől a bencés kolostorok szellemi békéjéig ível.
+      </p>
+    </div>
+
+    <!-- 1. KÉP DOBOZ (1 oszlop) - placeholder-hero.jpg -->
+    <div class="bento-card bento-image-card">
+      <div class="image-wrapper">
+        <img src="placeholder-hero.jpg" alt="Trans Europe Ultra - Történelmi örökség">
+      </div>
+    </div>
+
+    <!-- 2. 1504-es térkép és portugál felfedezők -->
+    <div class="bento-card">
+      <h2>Az 1504-es Térkép és a Felfedezők</h2>
+      <p>Amikor 1504-ben a portugál tengerészek és felfedezők (mint például Gaspar Corte-Real expedíciói nyomán) feltérképezték Újfundland partjait, a mai St. John’s környékét még <em>Terra de Bacalhaos</em> (azaz a Tőkehal Földje) néven jegyezték fel a korabeli portolán térképeken.</p>
+      <div class="highlight-box">
+        Ez a történelmi kapcsolat köti össze a Trans-Canada Ultra kanadai célvárosát a portugál tengerészmúlttal.
+      </div>
+    </div>
+
+    <!-- 3. Whitehorse városa -->
+    <div class="bento-card">
+      <h2>Whitehorse városa</h2>
+      <p>A kanadai Yukon tartomány székhelye, Whitehorse a legendás Trans-Canada Ultra kiindulópontja. Nevét az 1890-es évekbeli klonadiki aranyláz idején kapta a Lewes-folyó zúgóiról, amelyek fehér lovak sörényére emlékeztették az arra utazó szerencsevadászokat és kutatókat.</p>
+    </div>
+
+    <!-- 4. Totemoszlopok -->
+    <div class="bento-card">
+      <h2>A Totemoszlopok Világa</h2>
+      <p>Észak-Amerika nyugati vidékeinek és Yukon tartománynak elválaszthatatlan kulturális szimbólumai a fenséges totemoszlopok. Ezeket az őslakos közösségek faragták történetek elmesélésére, családi nemzetségek tiszteletére, valamint a szellemvilággal való kapcsolat ápolására.</p>
+    </div>
+
+    <!-- 5. Trans-Canada Ultra -->
+    <div class="bento-card">
+      <h2>A Trans-Canada Ultra Szellemisége</h2>
+      <p>A Trans-Canada Ultra a világ leghosszabb és legkegyetlenebb önellátó kerékpáros ultraversenye, amely Whitehorse-ból indul és Újfundlandon, a Cape Spear világítótoronynál ér véget. Ennek a gigantikus kihívásnak az európai testvérpárjaként született meg a Trans Europe Ultra.</p>
+    </div>
+
+    <!-- 6. St. John's-i világítótorony -->
+    <div class="bento-card">
+      <h2>St. John’s – Cape Spear Világítótorony</h2>
+      <p>Újfundland keleti csücskében, St. John’s mellett található a Cape Spear világítótorony, amely Észak-Amerika legkeletibb pontja. A versenyzők számára ez a történelmi világítótorony jelenti a dicsőséges célvonalat az óceán partján.</p>
+    </div>
+
+    <!-- 7. Tőkehal halászat és portugál nemzeti eledel -->
+    <div class="bento-card">
+      <h2>A Tőkehal és a Bacalhau</h2>
+      <p>A tőkehal (portugálul <em>bacalhau</em>) a portugál gasztronómia és kultúra alappillére. Az évszázadok során a portugál halászok hajóztak el az északi vizekig, köztük Újfundland partjaiig, hogy beszerezzék ezt a halat, és ezer meg egy receptet dolgoztak ki elkészítésére.</p>
+    </div>
+
+    <!-- 8. Portói világítótorony (Farol de Felgueiras) mint szimbolikus rajt -->
+    <div class="bento-card">
+      <h2>A Portói Világítótorony – A Szimbolikus Rajt</h2>
+      <p>A Douro folyó torkolatában, a portugáliai Portóban álló Farol de Felgueiras világítótorony jelenti a Trans Europe Ultra hivatalos, szimbolikus rajtpontját. Az Atlanti-óceán hullámai által ostromolt móló tövéből indulnak útnak a kerékpárosok.</p>
+    </div>
+
+    <!-- 9. Portói bencések -->
+    <div class="bento-card">
+      <h2>A Portói Bencés Örökség</h2>
+      <p>A Trans Europe Ultra rajthelyszínén, Portóban találhatjuk a történelmi São Bento kolostorokat és pályaudvart. A bencés szerzetesek évszázadokon át jelen voltak a városcsomópontban, megalapozva a szellemi fegyelmet.</p>
+    </div>
+
+    <!-- 10. Ílhavo városa és a tőkehalászati kapcsolat -->
+    <div class="bento-card">
+      <h2>Ílhavo – A Tőkehalászok Városa</h2>
+      <p>A portugáliai <strong>Ílhavo</strong> városa a történelmi távolsági tőkehalász flotta székhelye és központja. Olyan kulcsfontosságú város, ahonnan a bátor portugál halászok generációi indultak el az északi-tengeri és újfundlandi vizekre.</p>
+    </div>
+
+    <!-- 11. Európa bencés kolostorai az útvonalon -->
+    <div class="bento-card">
+      <h2>Bencés Kolostorok az Útvonal Mentén</h2>
+      <p>A 12 országon átívelő európai vándorlás során a versenyzők számos történelmi bencés szentély és kolostor mellett haladnak el, amelyek évszázadokon át Európa szellemi bázisai voltak.</p>
+    </div>
+
+    <!-- 12. Tihany bemutatása és a Bencés Apátság (Széles doboz: 2 oszlop) -->
+    <div class="bento-card col-span-2">
+      <h2>Tihany és a Tihanyi Bencés Apátság</h2>
+      <p>A Trans Europe Ultra európai útvonalának fenséges célvonala a Balaton partján magasodó Tihanyi Bencés Apátság. I. András király alapította 1055-ben, és itt található a magyar nyelv legrégebbi írásos emlékét őrző Tihanyi Alapítólevél is.</p>
+      
+      <div class="highlight-box" style="margin-top: 1rem;">
+        <strong>Célvonal:</strong> A tihanyi apátság udvara nemcsak a fizikai megmérettetés végét jelenti, hanem a szellemi megérkezést is, ahol a fáradt utazót a bencések ezeréves békéje várja („Ora et labora”).
+      </div>
+    </div>
+
+  </div>
+  <!-- BENTO GRID VÉGE -->
+
+  <footer>
+    <p>&copy; 2027–2030 Trans Europe Ultra. Minden jog fenntartva.</p>
+  </footer>
+
+</body>
+</html>

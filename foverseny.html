@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trans Europe Ultra - Főverseny</title>
+  <!-- Modern Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      text-align: left;
+    }
+
+    /* Alapértelmezett sorkizárás a bekezdésekre */
+    p, .bento-card p:not(.highlight-box) {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    @media (max-width: 968px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+        padding: 0;
+      }
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .lang-switcher a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.2rem 0.4rem;
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+    .lang-switcher a.active, .lang-switcher a:hover {
+      background: #f59e0b;
+      color: #0f172a;
+    }
+
+    .nav-links a.highlight-green {
+      color: #4ade80 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-green:hover {
+      color: #86efac !important;
+    }
+
+    /* Pirosas kiemelés a regisztráció gombhoz */
+    .nav-links a.highlight-red {
+      color: #ef4444 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-red:hover {
+      color: #f87171 !important;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Kiemelt dobozok stílusa */
+    .info-highlight-box {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: #78350f;
+    }
+
+    h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+    }
+    .support-action { margin-top: 1.5rem; text-align: center; }
+    .support-button {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 100%; box-sizing: border-box; padding: .9rem 1rem;
+      border: 1px solid #d97706; border-radius: 12px;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      color: #0f172a; font: inherit; font-weight: 800; text-decoration: none;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, .18);
+      transition: background .2s ease, box-shadow .2s ease;
+    }
+    a.support-button:hover { background: #fbbf24; box-shadow: 0 6px 16px rgba(217, 119, 6, .28); }
+    .support-button:focus-visible { outline: 3px solid #0f172a; outline-offset: 4px; }
+    .route-short-video {
+      width: 100%; height: auto; display: block;
+      border: 0; border-radius: 8px; margin: 0 0 2rem;
+    }
+
+    /* Garantált kétoszlopos Flexbox elrendezés a díjakhoz */
+    .pricing-flex-container {
+      display: flex;
+      gap: 2rem;
+      width: 100%;
+    }
+    .pricing-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.8rem;
+    }
+    @media (max-width: 768px) {
+      .pricing-flex-container {
+        flex-direction: column;
+      }
+    }
+
+    footer {
+      padding: 3.5rem 1rem;
+      margin-top: 5rem;
+      background-color: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css?v=20260930-bp200km">
+  <script src="site.js" defer></script>
+  <style id="header-typography">
+/* Fő navigáció: nagyobb betűk és színes kiemelések. */
+header .site-nav .nav-primary li,
+header .site-nav .nav-primary a,
+header .site-nav .nav-primary a:is(.active, :hover, :focus, :active) {
+  font-size: 14px !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+header .site-nav .nav-primary a {
+  padding: .45rem .4rem;
+  border-radius: 6px;
+  transition: background-color .2s, color .2s;
+}
+header .site-nav .nav-primary a:hover {
+  background: rgba(255, 255, 255, .08);
+}
+header .site-nav .nav-primary a.active {
+  background: rgba(245, 158, 11, .12);
+  color: #f59e0b;
+  box-shadow: inset 0 -2px #f59e0b;
+}
+header .site-nav .nav-primary a.highlight-green { color: #4ade80 !important; }
+header .site-nav .nav-primary a.highlight-green:hover { background: rgba(74, 222, 128, .10); color: #86efac !important; }
+header .site-nav .nav-primary a.highlight-green.active { background: rgba(74, 222, 128, .12); box-shadow: inset 0 -2px #4ade80; }
+header .site-nav .nav-primary a.highlight-red { color: #ef4444 !important; }
+header .site-nav .nav-primary a.highlight-red:hover { background: rgba(239, 68, 68, .10); color: #f87171 !important; }
+header .site-nav .nav-primary a.highlight-red.active { background: rgba(239, 68, 68, .12); box-shadow: inset 0 -2px #ef4444; }
+header .site-nav .nav-secondary li,
+header .site-nav .nav-secondary a,
+header .site-nav .nav-secondary a:is(.active, :hover, :focus, :active) {
+  font-size: 12px !important;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav" aria-label="Fő navigáció">
+      <div class="brand">
+        <a href="index.html" class="logo">TRANS EUROPE <span>ULTRA</span></a>
+        <span class="brand-motto">ORA ET LABORA</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">☰ Menü</button>
+      <div class="nav-content" id="site-menu">
+        <div class="nav-groups">
+          <ul class="nav-links nav-primary">
+            <li><a href="index.html">FŐOLDAL</a></li>
+            <li><a href="tortenelem.html">TÖRTÉNELEM</a></li>
+            <li><a href="foverseny.html" class="highlight-green active" aria-current="page">FŐVERSENY</a></li>
+            <li><a href="bikepacking-200.html" class="highlight-green">BP-200KM</a></li>
+            <li><a href="szakaszok.html">SZAKASZOK</a></li>
+            <li><a href="regisztracio.html" class="highlight-red">REGISZTRÁCIÓ</a></li>
+            <li><a href="szabalyzat.html">SZABÁLYZAT</a></li>
+          </ul>
+          <ul class="nav-links nav-secondary">
+            <li><a href="eredmenyek.html">EREDMÉNYEK</a></li>
+            <li><a href="rolunk.html">RÓLUNK</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">KONTAKT</a></li>
+          </ul>
+        </div>
+        <div class="lang-switcher" aria-label="Nyelvválasztó">
+          <a href="#" class="active" title="Magyar" lang="hu">🇭🇺 HU</a>
+          <a href="#" title="English" lang="en">🇬🇧 EN</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BENTO GRID KEZDETE -->
+  <div class="bento-container">
+
+    <!-- HERO / FŐ CÍM -->
+    <div class="bento-card col-span-2 hero-card" style="text-align: center; padding: 2.5rem 2rem;">
+      <h1>TRANS EUROPE ULTRA</h1>
+      <p style="font-size: 0.95rem; color: #334155; max-width: 750px; margin: 0 auto; text-align: center; line-height: 1.7;">
+        Portótól Tihanyig, 12 ország legendás csúcsain és hágóin át: Portugália, Spanyolország, Andorra, Franciaország, Svájc, Olaszország, Ausztria, Németország, Csehország, Lengyelország, Szlovákia és Magyarország.
+      </p>
+    </div>
+
+    <!-- 1. FŐVERSENY SZEKCIÓ -->
+    <div class="bento-card col-span-2">
+      
+      <video class="route-short-video" loop muted playsinline aria-label="Trans Europe Ultra rövid európai útvonalanimáció" controls poster="route-video-poster.jpg" preload="none">
+        <source src="Europe_Ultra_Short.mp4" type="video/mp4">
+        A böngésződ nem támogatja a videó lejátszását.
+      </video>
+
+      <h3 style="color: #d97706; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.2rem;">Az útvonal: 12 ország – 12 ikonikus csúcsa</h3>
+      
+      <p>A Trans Europe Ultra – Part 1 nyomvonala szigorúan kötött: a versenyzők a szervezők által megadott hivatalos GPX-nyomvonalat követve teljesítik a távot, amelynek során a 12 megadott nemzeti csúcsot és ikonikus hágót kötelező sorrendben, kerékpárral kell érinteniük. Ez az útvonal átszeli az Ibériai-félszigetet, a Pireneusokat, az Alpok legmagasabb hágóit, Közép-Európa és a Kárpátok csúcsait, majd a Kárpát-medencén keresztül éri el a balatoni célvonalat.</p>
+      <br>
+      <p>A <strong>2027-es évben a rendezvény egy úgynevezett Pioneer Edition (Úttörő kiadás)</strong> keretében valósul meg, így az indulás időpontja eltér a későbbi évek megszokott menetrendjétől. Mivel ez a kiadás a teljes nyomvonal első éles tesztje, a szervezők az elbírálás során megengedőbbek és rugalmasabbak lesznek abban az esetben, ha a kijelölt útvonaltól esetleges versenykiírási vagy útvonaltervezési hiányosságok, hibák miatt kényszerül eltérni a versenyző.</p>
+      
+      <div class="info-highlight-box" style="margin-top: 1.5rem;">
+        <strong>Táv:</strong> 5.760 km – 77.750 szintemelkedés
+      </div>
+    </div>
+
+    <!-- 3. NEVEZÉSI DÍJ (Kétoszlopos elrendezés: Early Bird & Teljes árú csomag) -->
+    <div class="bento-card col-span-2" style="background: linear-gradient(145deg, #ffffff, #f8fafc); border: 1px solid rgba(245, 158, 11, 0.3);">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0; margin-bottom: 1.5rem; text-align: center;">Nevezési Díj & Csomag (1+3 Éves Ciklus)</h2>
+      
+      <div class="pricing-flex-container">
+        
+        <!-- 1. Oszlop: Early Bird Kedvezmény -->
+        <div class="pricing-column" style="border: 2px solid #10b981; box-shadow: 0 4px 12px rgba(16,185,129,0.08);">
+          <div>
+            <span style="display: inline-block; background: #d1fae5; color: #065f46; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.75rem;">EARLY BIRD AKCIÓ</span>
+            <h3 style="color: #0f172a; font-size: 1.4rem; margin-top: 0; margin-bottom: 0.5rem;">Kedvezményes Nevezés</h3>
+            <p style="font-size: 0.95rem; color: #475569; margin-bottom: 1.2rem; text-align: justify;">
+              Március 31-ig kedvezményes áron lehet regisztrálni a teljes <strong>1+3 éves ciklusra (2027–2030)</strong>. Tartalmazza a teljes körű csomagot és az összes éves jogosultságot.
+            </p>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <div style="font-size: 2rem; font-weight: 800; color: #059669; margin-bottom: 0.5rem;">499 €</div>
+            <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Március 31-ig érvényes kedvezményes ár.</p>
+          </div>
+        </div>
+
+        <!-- 2. Oszlop: Hivatalos / Teljes áru nevezés -->
+        <div class="pricing-column" style="border: 2px solid #fcd34d; box-shadow: 0 4px 12px rgba(245,158,11,0.08);">
+          <div>
+            <span style="display: inline-block; background: #fef3c7; color: #b45309; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.75rem;">TELJES KÖRŰ CSOMAG</span>
+            <h3 style="color: #0f172a; font-size: 1.4rem; margin-top: 0; margin-bottom: 0.5rem;">Normál Nevezési Díj</h3>
+            <p style="font-size: 0.95rem; color: #475569; margin-bottom: 1.2rem; text-align: justify;">
+              Március 31. utáni jelentkezés esetén érvényes teljes díj a 4 évre, amely magában foglalja a nyomkövetést, az érmet és minden hivatalos szolgáltatást.
+            </p>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <div style="font-size: 2rem; font-weight: 800; color: #d97706; margin-bottom: 0.5rem;">650 €</div>
+            <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Teljes árú regisztráció (1+3 éves ciklus).</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Kiegészítő részletek a csomag tartalmáról alatta -->
+      <div style="margin-top: 1.5rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.2rem; font-size: 0.9rem; color: #334155;">
+        <strong>A csomag tartalma mindkét opció esetén:</strong> Teljes körű GPS nyomkövetési rendszer hozzáférés, hivatalos GPX útvonalcsomag, TEU Finisher érem / trófea, oklevél, valamint indulási jog mind a 4 év kiírásain (2027–2030).
+      </div>
+      <div class="support-action">
+        <!-- Stripe-link megadásakor használd ezt:
+        <a class="support-button" href="STRIPE_LINK" target="_blank" rel="noopener noreferrer">Támogatom a versenyt</a>
+        -->
+        <button class="support-button" type="button" disabled>Támogatom a versenyt</button>
+      </div>
+    </div>
+
+    <!-- 2. FŐVERSENY DÍJAZÁS SZEKCIÓ -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">Díjazás struktúra – Főverseny (Trans Europe Ultra)</h2>
+      <p>Az ultra-kerékpározás szellemiségéhez és íratlan hagyományaihoz hűen a Trans Europe Ultra főversenyén <strong>nincs közvetlen pénzdíjazás</strong>. A küzdelem az emberi teljesítőképesség határainak feszítéséről, a közösségről és a 12 országon átívelő út megtételéről szól.</p>
+      <br>
+      <p>Ugyanakkor a kiemelkedő teljesítményt egy egyedülálló finanszírozási modullal ismerjük el:</p>
+      <ul style="margin-top: 1rem; padding-left: 1.2rem; line-height: 1.7;">
+        <li style="margin-bottom: 1rem;">
+          <strong>100%-os nevezési díj visszatérítés (Top 3 nő & Top 3 férfi):</strong><br>
+          A teljes 4 éves versenyciklus lezárultával, a 2030-as kiadás után az első 3 női és az első 3 férfi célba érkező hiánytalanul visszakapja a teljes nevezési díját.
+        </li>
+        <li style="margin-bottom: 1rem;">
+          <strong>Négyéves érvényesség (1+3 év):</strong><br>
+          Az egyszeri nevezési díj <strong>mind a 4 évre</strong> érvényes: magában foglalja a 2027-es Pioneer Edition-t, valamint a következő 3 teljes szezont (2028, 2029, 2030).
+        </li>
+        <li>
+          <strong>Finisher elismerések:</strong><br>
+          Minden célba érkező versenyző elnyeri a hivatalos <strong>TEU Finisher trófeát</strong>, névre szóló oklevelet, valamint helyet kap a Trans Europe Ultra örökös Hírességek Csarnokában (<em>Hall of Fame</em>).
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- BENTO GRID VÉGE -->
+
+  <footer>
+    <p>&copy; 2027–2030 Trans Europe Ultra. Minden jog fenntartva.</p>
+  </footer>
+
+</body>
+</html>

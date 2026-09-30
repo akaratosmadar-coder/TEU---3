@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trans Europe Ultra - Szabályzat</title>
+  <!-- Modern Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=v7iFCKhbV8HPayZz6IXXxhSw6qg_FRuziLWz2D6i3XoeF-f4xukDNon6-rk2X-BWHbvrwKNGrydqt04sVqy-DpLHO4znVRT4w9vBYc1PMW1_sQ7ee1UZA87b03cuGoR59THG9Sv84mkVJAbfYJo67_T4Gh0xkh5adBHuYfKXSBH_BvSvYRH9pxqA0X7CW-FpOJRyC8l2mhE0yndCWDbkBuz_v1xDHX8jPrnnTZObMkjhvb2Sc9mxoP7upn3MxIRepK7H3W3-l3PKRoOQ9aX5TDpgWuExndsTpJqagsmhx5ws_LgZvNAO9FEKfz5e0W6M" charset="UTF-8"></script><style>
+    body {
+      font-family: 'Inter', sans-serif;
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #334155;
+    }
+
+    /* Alapértelmezett sorkizárás a bekezdésekre */
+    p, .bento-card p:not(.highlight-box) {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    /* Reszponzív navigáció */
+    @media (max-width: 968px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+        padding: 0;
+      }
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .lang-switcher a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.2rem 0.4rem;
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+    .lang-switcher a.active, .lang-switcher a:hover {
+      background: #f59e0b;
+      color: #0f172a;
+    }
+
+    .nav-links a.highlight-green {
+      color: #4ade80 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-green:hover {
+      color: #86efac !important;
+    }
+
+    /* Pirosas kiemelés a regisztráció gombhoz */
+    .nav-links a.highlight-red {
+      color: #ef4444 !important;
+      font-weight: bold;
+    }
+    .nav-links a.highlight-red:hover {
+      color: #f87171 !important;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+      margin-bottom: 0.75rem;
+    }
+
+    footer {
+      padding: 3.5rem 1rem;
+      margin-top: 5rem;
+      background-color: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css?v=20260930-v3">
+  <script src="site.js" defer></script>
+  <style id="header-typography">
+    /* A menü betűmérete mobilon és asztali nézetben is állandó; a mobil elrendezést a közös CSS kezeli. */
+    header .site-nav .nav-primary li,
+    header .site-nav .nav-primary a,
+    header .site-nav .nav-primary a:is(.active, :hover, :focus, :active) {
+      font-size: 12.8px !important; line-height: 1.4; letter-spacing: normal;
+    }
+    header .site-nav .nav-secondary li,
+    header .site-nav .nav-secondary a,
+    header .site-nav .nav-secondary a:is(.active, :hover, :focus, :active) {
+      font-size: 12px !important; line-height: 1.4; letter-spacing: normal;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav" aria-label="Fő navigáció">
+      <div class="brand">
+        <a href="index.html" class="logo">TRANS EUROPE <span>ULTRA</span></a>
+        <span class="brand-motto">ORA ET LABORA</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">☰ Menü</button>
+      <div class="nav-content" id="site-menu">
+        <div class="nav-groups">
+          <ul class="nav-links nav-primary">
+            <li><a href="index.html">FŐOLDAL</a></li>
+            <li><a href="tortenelem.html">TÖRTÉNELEM</a></li>
+            <li><a href="foverseny.html" class="highlight-green">FŐVERSENY</a></li>
+            <li><a href="bikepacking-200.html" class="highlight-green">BIKEPACKING-200</a></li>
+            <li><a href="szakaszok.html">SZAKASZOK</a></li>
+            <li><a href="regisztracio.html" class="highlight-red">REGISZTRÁCIÓ</a></li>
+            <li><a href="szabalyzat.html" class="active" aria-current="page">SZABÁLYZAT</a></li>
+          </ul>
+          <ul class="nav-links nav-secondary">
+            <li><a href="eredmenyek.html">EREDMÉNYEK</a></li>
+            <li><a href="rolunk.html">RÓLUNK</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">KONTAKT</a></li>
+          </ul>
+        </div>
+        <div class="lang-switcher" aria-label="Nyelvválasztó">
+          <a href="#" class="active" title="Magyar" lang="hu">🇭🇺 HU</a>
+          <a href="#" title="English" lang="en">🇬🇧 EN</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BENTO GRID KEZDETE -->
+  <div class="bento-container">
+
+    <!-- HERO / FŐ CÍM -->
+    <div class="bento-card col-span-2 hero-card" style="text-align: center; padding: 2.5rem 2rem;">
+      <span class="hero-badge">Szabályzat & Előírások</span>
+      <h1 style="font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin: 0.5rem 0; color: #0f172a;">HIVATALOS VERSENYSZABÁLYZAT<br>TRANS EUROPE ULTRA (TEU)</h1>
+      <p style="font-size: 1.05rem; color: #334155; max-width: 750px; margin: 0 auto; text-align: center; line-height: 1.6;">
+        Sportemberi tisztaság és <strong>önellátás</strong> a <strong>12 országon</strong> átívelő európai megmérettetésen.
+      </p>
+    </div>
+
+    <!-- 1. SZABÁLY -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">1. A teljes nyomvonal teljesítése (A lehetséges leggyorsabb tempóban)</h2>
+      <p>A Trans Europe Ultra egy <strong>verseny</strong>. Akár az élmezőnyért és a <strong>Top 10</strong>-ért harcolsz, akár a saját határaidat feszegeted, a maximális teljesítményre kell törekedned – a <strong>biztonság</strong> teljes körű betartása mellett.</p>
+      <ul style="margin-top: 1rem; padding-left: 1.2rem; line-height: 1.7;">
+        <li style="margin-bottom: 0.75rem;"><strong>Nyomvonalhoz való ragaszkodás:</strong> Amennyiben elhagyod a pályát (szállás, étkezés, szerviz vagy pihenő miatt), pontosan ugyanazon a ponton (<strong>5 méteren belül</strong>) kell visszatérned a nyomvonalra, ahol letértél róla.</li>
+        <li style="margin-bottom: 0.75rem;"><strong>Párhuzamos kerékpárutak:</strong> Európa kiterjedt kerékpáros infrastruktúrával rendelkezik. Ha a hivatalos nyomvonal mellett közvetlenül egy párhuzamos, biztonságosabb kerékpárút fut, azt szabadon használhatod, amíg az nem rövidíti meg érdemben a távot.</li>
+        <li style="margin-bottom: 0.75rem;"><strong>Hivatalos GPX és vészhelyzetek:</strong> A végleges GPX nyomvonal a zárt versenyzői felületről tölthető le. Ha előre nem látható <strong>kényszerhelyzet</strong> blokkolja az utat, a veszélyzóna áthidalásához <strong>bármilyen közlekedési eszköz</strong> igénybe vehető.</li>
+        <li><strong>Becsületbeli megállapodás (Honor System):</strong> A verseny a sportemberi tisztaság és az íratlan úriemberi megállapodás alapján működik.</li>
+      </ul>
+    </div>
+
+    <!-- 2. SZABÁLY -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">2. Láthatóság és kötelező felszerelés</h2>
+      <p>A portói rajt előtt minden kerékpár <strong>kötelező műszaki gépátvételen</strong> esik át. A rajt feltétele a következő kiegészítők megléte és működőképessége:</p>
+      <ul style="margin-top: 1rem; padding-left: 1.2rem; line-height: 1.7;">
+        <li style="margin-bottom: 0.75rem;">Legalább <strong>1 db</strong> elemes/akku-üzemű <strong>piros hátsó lámpa</strong> és <strong>1 db piros hátsó fényvisszaverő</strong>.</li>
+        <li style="margin-bottom: 0.75rem;">Legalább <strong>1 db</strong> elemes/akku-üzemű <strong>első lámpa</strong> és <strong>1 db első fényvisszaverő</strong>.</li>
+        <li style="margin-bottom: 0.75rem;">Piros vagy sárga fényvisszaverők a pedálokon/sarkakon (a fényvisszaverő pánt is elfogadott; velomobiloknál nem feltétel).</li>
+        <li style="margin-bottom: 0.75rem;">Kormányról könnyen elérhető mechanikus vagy elektronikus <strong>csengő</strong>.</li>
+        <li><strong>Izofólia (túlélőfólia)</strong> a magashegyi kényszermegállásokra.</li>
+      </ul>
+      <p style="margin-top: 1rem;">A közúti közlekedésben nem létezik „túlzott láthatóság”. A szervezők bátorítják az egyéni láthatósági megoldásokat, amíg azok megfelelnek a helyi szabályoknak.</p>
+    </div>
+
+    <!-- 3. SZABÁLY -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">3. Biztonságos haladás</h2>
+      <p>Minden kerékpáros <strong>kizárólag maga felelős</strong> a saját biztonságáért. Semmilyen verseny nem ér annyit, hogy az életedet kockáztasd. Légy körültekintő, látható és tartsd fenn a kommunikációt.</p>
+      <p style="margin-top: 0.75rem;"><strong>Felszerelés:</strong> Bármilyen <strong>emberi erővel hajtott</strong> járművel rajthoz állhatsz (kétkerekű kerékpár, trike, fekvőkerékpár, velomobil stb.), amennyiben abban semmilyen motor vagy vitorla nem segít.</p>
+    </div>
+
+    <!-- 4. SZABÁLY -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">4. Kizárólag saját erőből történő haladás (Self-Supported)</h2>
+      <ul style="margin-top: 1rem; padding-left: 1.2rem; line-height: 1.7;">
+        <li style="margin-bottom: 0.75rem;"><strong>Tilos</strong> a szélárnyékban haladás (<strong>bolyozás</strong>), a húzatás, vagy a más versenyzőkkel/külső járművekkel való aerodinamikai együttműködés (kivéve a Páros kategóriát).</li>
+        <li style="margin-bottom: 0.75rem;">Semmilyen <strong>elektromos vagy robbanómotor</strong> nem használható.</li>
+        <li>Ez egy <strong>teljesen önellátó</strong> verseny.</li>
+      </ul>
+    </div>
+
+    <!-- 5. SZABÁLY -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">5. Folyamatos helymeghatározás és pozíciókövetés</h2>
+      <p>A verseny a Trackleaders felületét használja a nyomvonal pontos követésének, a célba érésnek és a hivatalos időeredményeknek az igazolására. A versenyzőknek <strong>folyamatosan sugározniuk kell</strong> a pozíciójukat.</p>
+      <ul style="margin-top: 1rem; padding-left: 1.2rem; line-height: 1.7;">
+        <li style="margin-bottom: 0.75rem;"><strong>Személyiségi jogok és alvás:</strong> A pihenés és alvás védelmében a Trackleaders nyilvános jeladója a tervezett alvóhely előtt <strong>legfeljebb 5 kilométerrel</strong> kikapcsolható. Ugyanakkor a hivatalos verseny-applikáció a háttérben továbbra is privát módon továbbítja a pozíciót a szervezők felé, igazolva, hogy a versenyző nem szegte meg a szállásfoglalási szabályokat.</li>
+        <li style="margin-bottom: 0.75rem;"><strong>Indulási kötelezettség:</strong> A haladás megkezdésekor a nyomkövető <strong>visszakapcsolása kötelező</strong>. A műholdas jeladó nélküli tekerés <strong>azonnali kizárást</strong> von maga után.</li>
+        <li><strong>Felelősségi nyilatkozat:</strong> Az online GPS-követés az útvonal igazolására és a nyilvánosság tájékoztatására szolgál, nem pedig a versenyző azonnali mentésének vagy biztonságának garantálására.</li>
+      </ul>
+    </div>
+
+    <!-- 6. SZABÁLY -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">6. Kizárólag mindenki számára elérhető erőforrások használata</h2>
+      <p>A versenyzők vásárolhatnak élelmiszert, felszerelést, bérelhetnek szállást, moshatnak ruhát és igénybe vehetnek kerékpárszervizt a nyomvonalba eső kereskedelmi egységekben.</p>
+      <ul style="margin-top: 1rem; padding-left: 1.2rem; line-height: 1.7;">
+        <li style="margin-bottom: 0.75rem;"><strong>Egyenlő esélyek elve:</strong> Bármilyen igénybe vett szolgáltatásnak bárki számára <strong>nyilvánosan és azonos feltételekkel</strong> elérhetőnek kell lennie. <strong>Tilos</strong> a személyes, előre megszervezett <strong>magánsegítség</strong>, kísérőautó vagy előre lefoglalt magánszállás.</li>
+        <li><strong>Postai csomagküldés:</strong> A versenyzők küldhetnek maguknak előre csomagokat kizárólag hivatalos postahivatalokba, szállodákba vagy kerékpárüzletekbe. A csomagok legkorábban a rajt előtt <strong>72 órával</strong> adhatók fel.</li>
+      </ul>
+    </div>
+
+    <!-- 7. SZABÁLY -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">7. Tisztelet és sportemberi magatartás</h2>
+      <p>A versenyzők a rendezvény és az ultra-kerékpáros közösség nagykövetei mind a <strong>12 országban</strong>. Bánj tisztelettel, türelemmel és kedvességgel a helyi lakosokkal, a vendéglátókkal, a szervizesekkel, az önkéntesekkel, a szervezőkkel és a versenytársaiddal. A 12 ország átszelése során éld meg az utazás kulturális élményét is: nyitottsággal fordulj a helyi közösségek felé, és bátran kóstold meg a helyi ételeket és gasztronómiai különlegességeket az út során!</p>
+    </div>
+
+    <!-- 8. SZABÁLY -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">8. A helyi törvények és a KRESZ betartása</h2>
+      <p>A versenyző <strong>kizárólagos felelőssége</strong> a <strong>12 érintett európai ország</strong> (Portugália, Spanyolország, Andorra, Franciaország, Svájc, Olaszország, Ausztria, Németország, Csehország, Lengyelország, Szlovákia, Magyarország) közlekedési és biztonsági szabályainak ismerete és <strong>maradéktalan betartása</strong>.</p>
+    </div>
+
+    <!-- 9. SZABÁLY -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">9. Hivatalos szintidő (40 nap) és biztonsági feladás</h2>
+      <p>A verseny teljesítésének hivatalos maximális szintideje <strong>40 nap</strong>.</p>
+      <ul style="margin-top: 1rem; padding-left: 1.2rem; line-height: 1.7;">
+        <li style="margin-bottom: 0.75rem;"><strong>Időjárási kockázatok:</strong> Az európai magashegyekben az időjárás rendkívül gyorsan átválthat fagypont alatti hőmérsékletre, jégesőre vagy hóviharra. Megfelelő tapasztalat és védőfelszerelés nélkül a haladás <strong>életveszélyes</strong>.</li>
+        <li><strong>Kiállási lehetőségek (Bailout):</strong> Amennyiben kényszerből vagy sérülés miatt feladod a versenyt, a nyomvonal mentén szinte folyamatosan elérhetők a nemzetközi vasútvonalak és a repülőterek. A hazajutási opciók feltérképezése a kerékpáros feladata.</li>
+      </ul>
+    </div>
+
+    <!-- 10. SZABÁLY -->
+    <div class="bento-card col-span-2">
+      <h2 style="color: #0f172a; font-weight: 700; margin-top: 0;">10. A szabályszegések következményei</h2>
+      <p>A főszervező fenntartja a jogot, hogy igazolt szabályszegés esetén a versenyzőt <strong>kizárja vagy hátrébb sorolja</strong> az összetett értékelésben (<strong>General Classification - GC</strong>).</p>
+      <ul style="margin-top: 1rem; padding-left: 1.2rem; line-height: 1.7;">
+        <li><strong>Önellenőrzés:</strong> Menet közben a szervezők nem küldenek azonnali figyelmeztetést a szabályszegésekről. A szabályok betartása és az esetleges útvonalhibák azonnali korrigálása a <strong>versenyző saját felelőssége</strong>. Bármely versenyző, aki elvéti a szabályokat, a sportemberi tisztaság jegyében köteles <strong>önként jelenteni</strong> a hibát vagy kiállni a GC értékelésből.</li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- BENTO GRID VÉGE -->
+
+  <footer>
+    <p>&copy; 2027–2030 Trans Europe Ultra. Minden jog fenntartva.</p>
+  </footer>
+</body>
+</html>
